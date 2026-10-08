@@ -1,0 +1,1557 @@
+[
+ {
+  "_id": {
+   "$oid": "11653f89097f5131777681a9"
+  },
+  "category": "Compute",
+  "config_type": "default_monitoring",
+  "metric": "CPUUtilization",
+  "resourceId": "i-267a54179a56bfc76",
+  "account_id": "9f37d377854b5388eeb91db4",
+  "to_date": {
+   "$date": "2026-07-11T23:59:59.999Z"
+  },
+  "element_id": "i-267a54179a56bfc76",
+  "from_date": {
+   "$date": "2026-07-11T00:00:00.000Z"
+  },
+  "display_name": "CPUUtilization",
+  "group_name": "CPUUtilization",
+  "metric_group_name": "CPUUtilization",
+  "metric_value": [
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T00:00:00.000Z"
+    },
+    "average": 25.426586,
+    "minimum": 19.920233,
+    "maximum": 27.314691
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T01:00:00.000Z"
+    },
+    "average": 23.466616,
+    "minimum": 20.090938,
+    "maximum": 25.637317
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T02:00:00.000Z"
+    },
+    "average": 22.503829,
+    "minimum": 10.620916,
+    "maximum": 25.742274
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T03:00:00.000Z"
+    },
+    "average": 21.904587,
+    "minimum": 16.440925,
+    "maximum": 31.036621
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T04:00:00.000Z"
+    },
+    "average": 20.450291,
+    "minimum": 16.647954,
+    "maximum": 23.091111
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T05:00:00.000Z"
+    },
+    "average": 23.591114,
+    "minimum": 16.660094,
+    "maximum": 24.724368
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T06:00:00.000Z"
+    },
+    "average": 22.757972,
+    "minimum": 21.777271,
+    "maximum": 31.3834
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T07:00:00.000Z"
+    },
+    "average": 27.813472,
+    "minimum": 22.339064,
+    "maximum": 30.567442
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T08:00:00.000Z"
+    },
+    "average": 26.646335,
+    "minimum": 20.338394,
+    "maximum": 28.441641
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T09:00:00.000Z"
+    },
+    "average": 32.3005,
+    "minimum": 25.11738,
+    "maximum": 36.372778
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T10:00:00.000Z"
+    },
+    "average": 32.483168,
+    "minimum": 32.450747,
+    "maximum": 33.126696
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T11:00:00.000Z"
+    },
+    "average": 36.219878,
+    "minimum": 31.364138,
+    "maximum": 40.177233
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T12:00:00.000Z"
+    },
+    "average": 43.797336,
+    "minimum": 41.88991,
+    "maximum": 50.532373
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T13:00:00.000Z"
+    },
+    "average": 43.238088,
+    "minimum": 34.147368,
+    "maximum": 45.01523
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T14:00:00.000Z"
+    },
+    "average": 46.97418,
+    "minimum": 46.049413,
+    "maximum": 50.859505
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T15:00:00.000Z"
+    },
+    "average": 45.550247,
+    "minimum": 44.933922,
+    "maximum": 51.911092
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T16:00:00.000Z"
+    },
+    "average": 44.499486,
+    "minimum": 37.083449,
+    "maximum": 47.031558
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T17:00:00.000Z"
+    },
+    "average": 41.740718,
+    "minimum": 37.261118,
+    "maximum": 49.799831
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T18:00:00.000Z"
+    },
+    "average": 38.02727,
+    "minimum": 37.213426,
+    "maximum": 42.923971
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T19:00:00.000Z"
+    },
+    "average": 40.509323,
+    "minimum": 34.931126,
+    "maximum": 46.411192
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T20:00:00.000Z"
+    },
+    "average": 35.745829,
+    "minimum": 34.395069,
+    "maximum": 40.921654
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T21:00:00.000Z"
+    },
+    "average": 32.069246,
+    "minimum": 31.35349,
+    "maximum": 36.624954
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T22:00:00.000Z"
+    },
+    "average": 30.635448,
+    "minimum": 27.575783,
+    "maximum": 35.489548
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T23:00:00.000Z"
+    },
+    "average": 25.344009,
+    "minimum": 20.904087,
+    "maximum": 31.765594
+   }
+  ],
+  "namespace": "AWS/EC2",
+  "name": "shop-prod-vpc",
+  "resource_name": "shop-prod-app-01",
+  "uri": "AWS/Compute/EC2/Instance",
+  "unit": "Percent",
+  "updated_at": {
+   "$date": "2026-07-12T00:09:59.999Z"
+  },
+  "inventory_id": {
+   "$oid": "f4464b8aad8c44f45cd895d2"
+  },
+  "resource_filter": "us-east-1",
+  "operation_id": "EC2_DescribeInstances",
+  "component": "EC2",
+  "created_at": {
+   "$date": "2026-07-12T00:09:59.999Z"
+  },
+  "created_by": "coreteam_rootaccount",
+  "custom_metrics": {},
+  "location": "us-east-1a",
+  "region": "us-east-1",
+  "meta_data": {},
+  "project": "0ea168b889dfd6f436619b1d",
+  "resource": "Instances",
+  "resource_type": "EC2",
+  "account_name": "QATeamAccount",
+  "service_name": "AWS",
+  "service_type": "Cloud",
+  "summary_details": {
+   "reservationId": "r-eb9b3b34c3a034018",
+   "ownerId": "593210493393",
+   "instancesSet": {
+    "item": {
+     "instanceId": "i-267a54179a56bfc76",
+     "imageId": "ami-06658943e5ffa011b",
+     "instanceState": {
+      "code": 16,
+      "name": "running"
+     },
+     "instanceType": "m5.large",
+     "launchTime": "2026-01-14T09:12:41.000Z",
+     "placement": {
+      "availabilityZone": "us-east-1a",
+      "tenancy": "default",
+      "groupName": ""
+     },
+     "monitoring": {
+      "state": "enabled"
+     },
+     "architecture": "x86_64",
+     "rootDeviceType": "ebs",
+     "rootDeviceName": "/dev/xvda",
+     "blockDeviceMapping": {
+      "item": [
+       {
+        "deviceName": "/dev/xvda",
+        "ebs": {
+         "volumeId": "vol-6ed4dadac2c402f88",
+         "status": "attached",
+         "deleteOnTermination": "true"
+        }
+       }
+      ]
+     },
+     "virtualizationType": "hvm",
+     "hypervisor": "xen",
+     "ebsOptimized": "true",
+     "enaSupport": "true",
+     "cpuOptions": {
+      "coreCount": "1",
+      "threadsPerCore": "2"
+     },
+     "metadataOptions": {
+      "state": "applied",
+      "httpTokens": "required",
+      "httpPutResponseHopLimit": "1",
+      "httpEndpoint": "enabled"
+     },
+     "maintenanceOptions": {
+      "autoRecovery": "default"
+     },
+     "sourceDestCheck": "true",
+     "platformDetails": "Linux/UNIX",
+     "usageOperation": "RunInstances",
+     "tagSet": {
+      "item": [
+       {
+        "key": "app",
+        "value": "shop"
+       },
+       {
+        "key": "tier",
+        "value": "app"
+       },
+       {
+        "key": "env",
+        "value": "prod"
+       },
+       {
+        "key": "owner",
+        "value": "cloudops"
+       },
+       {
+        "key": "cost-center",
+        "value": "CC-5042"
+       },
+       {
+        "key": "Name",
+        "value": "shop-prod-app-01"
+       }
+      ]
+     }
+    }
+   }
+  },
+  "tags": [
+   {
+    "key": "app",
+    "value": "shop"
+   },
+   {
+    "key": "tier",
+    "value": "app"
+   },
+   {
+    "key": "env",
+    "value": "prod"
+   },
+   {
+    "key": "owner",
+    "value": "cloudops"
+   },
+   {
+    "key": "cost-center",
+    "value": "CC-5042"
+   },
+   {
+    "key": "Name",
+    "value": "shop-prod-app-01"
+   }
+  ],
+  "third_party_integration": {},
+  "extended_summary_details": {
+   "network_interfaces": [
+    {
+     "privateIpAddress": "10.1.1.11",
+     "subnetId": "subnet-95ad1cdc",
+     "sourceDestCheck": true
+    }
+   ]
+  },
+  "alerts": []
+ },
+ {
+  "_id": {
+   "$oid": "28eec601623daa36359d20d7"
+  },
+  "category": "Compute",
+  "config_type": "default_monitoring",
+  "metric": "NetworkIn",
+  "resourceId": "i-267a54179a56bfc76",
+  "account_id": "9f37d377854b5388eeb91db4",
+  "to_date": {
+   "$date": "2026-07-11T23:59:59.999Z"
+  },
+  "element_id": "i-267a54179a56bfc76",
+  "from_date": {
+   "$date": "2026-07-11T00:00:00.000Z"
+  },
+  "display_name": "NetworkIn",
+  "group_name": "NetworkIn",
+  "metric_group_name": "NetworkIn",
+  "metric_value": [
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T00:00:00.000Z"
+    },
+    "average": 27131474.24,
+    "minimum": 24593406.95,
+    "maximum": 32000104.41,
+    "total": 325577690.85,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T01:00:00.000Z"
+    },
+    "average": 25192959.41,
+    "minimum": 13283775.75,
+    "maximum": 33924492.03,
+    "total": 302315512.89,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T02:00:00.000Z"
+    },
+    "average": 26883996.67,
+    "minimum": 17041317.56,
+    "maximum": 31291109.85,
+    "total": 322607960.08,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T03:00:00.000Z"
+    },
+    "average": 26995470.83,
+    "minimum": 10533045.01,
+    "maximum": 29077395.05,
+    "total": 323945649.94,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T04:00:00.000Z"
+    },
+    "average": 26380102.51,
+    "minimum": 20274258.55,
+    "maximum": 29686420.94,
+    "total": 316561230.17,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T05:00:00.000Z"
+    },
+    "average": 30759545.02,
+    "minimum": 30736396.58,
+    "maximum": 46721346.13,
+    "total": 369114540.23,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T06:00:00.000Z"
+    },
+    "average": 25564006.46,
+    "minimum": 22548477.87,
+    "maximum": 26356815.75,
+    "total": 306768077.47,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T07:00:00.000Z"
+    },
+    "average": 33916328.75,
+    "minimum": 21450851.41,
+    "maximum": 50148140.98,
+    "total": 406995944.97,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T08:00:00.000Z"
+    },
+    "average": 37237118.69,
+    "minimum": 15653138.01,
+    "maximum": 39387460.67,
+    "total": 446845424.34,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T09:00:00.000Z"
+    },
+    "average": 40846069.82,
+    "minimum": 31099345.83,
+    "maximum": 54070097.17,
+    "total": 490152837.87,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T10:00:00.000Z"
+    },
+    "average": 55532913.59,
+    "minimum": 36775819.38,
+    "maximum": 57513428.6,
+    "total": 666394963.09,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T11:00:00.000Z"
+    },
+    "average": 67927643.12,
+    "minimum": 61382677.57,
+    "maximum": 88659077.21,
+    "total": 815131717.48,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T12:00:00.000Z"
+    },
+    "average": 83423556.13,
+    "minimum": 74315270.32,
+    "maximum": 89151186.7,
+    "total": 1001082673.55,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T13:00:00.000Z"
+    },
+    "average": 79775708.76,
+    "minimum": 70275064.42,
+    "maximum": 81326418.08,
+    "total": 957308505.14,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T14:00:00.000Z"
+    },
+    "average": 81410028.38,
+    "minimum": 68582771.79,
+    "maximum": 90744357.81,
+    "total": 976920340.52,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T15:00:00.000Z"
+    },
+    "average": 87332978.15,
+    "minimum": 71533926.86,
+    "maximum": 105188282.75,
+    "total": 1047995737.82,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T16:00:00.000Z"
+    },
+    "average": 83178511.11,
+    "minimum": 70132594.56,
+    "maximum": 96036169.54,
+    "total": 998142133.32,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T17:00:00.000Z"
+    },
+    "average": 86351879.82,
+    "minimum": 60145005.16,
+    "maximum": 96771025.42,
+    "total": 1036222557.84,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T18:00:00.000Z"
+    },
+    "average": 72860929.36,
+    "minimum": 51190024.82,
+    "maximum": 87356493.35,
+    "total": 874331152.34,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T19:00:00.000Z"
+    },
+    "average": 78982517.37,
+    "minimum": 69436598.52,
+    "maximum": 88388097.67,
+    "total": 947790208.39,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T20:00:00.000Z"
+    },
+    "average": 62612655.09,
+    "minimum": 45464539.05,
+    "maximum": 72377466.57,
+    "total": 751351861.04,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T21:00:00.000Z"
+    },
+    "average": 49060049.72,
+    "minimum": 48815589.53,
+    "maximum": 77937486.66,
+    "total": 588720596.59,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T22:00:00.000Z"
+    },
+    "average": 44911826.19,
+    "minimum": 44607513.93,
+    "maximum": 56007709.73,
+    "total": 538941914.28,
+    "count": 12
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-07-11T23:00:00.000Z"
+    },
+    "average": 31549829.03,
+    "minimum": 29827599.11,
+    "maximum": 39694324.55,
+    "total": 378597948.4,
+    "count": 12
+   }
+  ],
+  "namespace": "AWS/EC2",
+  "name": "shop-prod-vpc",
+  "resource_name": "shop-prod-app-01",
+  "uri": "AWS/Compute/EC2/Instance",
+  "unit": "Bytes",
+  "updated_at": {
+   "$date": "2026-07-12T00:06:59.999Z"
+  },
+  "inventory_id": {
+   "$oid": "f4464b8aad8c44f45cd895d2"
+  },
+  "resource_filter": "us-east-1",
+  "operation_id": "EC2_DescribeInstances",
+  "component": "EC2",
+  "created_at": {
+   "$date": "2026-07-12T00:06:59.999Z"
+  },
+  "created_by": "coreteam_rootaccount",
+  "custom_metrics": {},
+  "location": "us-east-1a",
+  "region": "us-east-1",
+  "meta_data": {},
+  "project": "0ea168b889dfd6f436619b1d",
+  "resource": "Instances",
+  "resource_type": "EC2",
+  "account_name": "QATeamAccount",
+  "service_name": "AWS",
+  "service_type": "Cloud",
+  "summary_details": {
+   "reservationId": "r-eb9b3b34c3a034018",
+   "ownerId": "593210493393",
+   "instancesSet": {
+    "item": {
+     "instanceId": "i-267a54179a56bfc76",
+     "imageId": "ami-06658943e5ffa011b",
+     "instanceState": {
+      "code": 16,
+      "name": "running"
+     },
+     "instanceType": "m5.large",
+     "launchTime": "2026-01-14T09:12:41.000Z",
+     "placement": {
+      "availabilityZone": "us-east-1a",
+      "tenancy": "default",
+      "groupName": ""
+     },
+     "monitoring": {
+      "state": "enabled"
+     },
+     "architecture": "x86_64",
+     "rootDeviceType": "ebs",
+     "rootDeviceName": "/dev/xvda",
+     "blockDeviceMapping": {
+      "item": [
+       {
+        "deviceName": "/dev/xvda",
+        "ebs": {
+         "volumeId": "vol-6ed4dadac2c402f88",
+         "status": "attached",
+         "deleteOnTermination": "true"
+        }
+       }
+      ]
+     },
+     "virtualizationType": "hvm",
+     "hypervisor": "xen",
+     "ebsOptimized": "true",
+     "enaSupport": "true",
+     "cpuOptions": {
+      "coreCount": "1",
+      "threadsPerCore": "2"
+     },
+     "metadataOptions": {
+      "state": "applied",
+      "httpTokens": "required",
+      "httpPutResponseHopLimit": "1",
+      "httpEndpoint": "enabled"
+     },
+     "maintenanceOptions": {
+      "autoRecovery": "default"
+     },
+     "sourceDestCheck": "true",
+     "platformDetails": "Linux/UNIX",
+     "usageOperation": "RunInstances",
+     "tagSet": {
+      "item": [
+       {
+        "key": "app",
+        "value": "shop"
+       },
+       {
+        "key": "tier",
+        "value": "app"
+       },
+       {
+        "key": "env",
+        "value": "prod"
+       },
+       {
+        "key": "owner",
+        "value": "cloudops"
+       },
+       {
+        "key": "cost-center",
+        "value": "CC-5042"
+       },
+       {
+        "key": "Name",
+        "value": "shop-prod-app-01"
+       }
+      ]
+     }
+    }
+   }
+  },
+  "tags": [
+   {
+    "key": "app",
+    "value": "shop"
+   },
+   {
+    "key": "tier",
+    "value": "app"
+   },
+   {
+    "key": "env",
+    "value": "prod"
+   },
+   {
+    "key": "owner",
+    "value": "cloudops"
+   },
+   {
+    "key": "cost-center",
+    "value": "CC-5042"
+   },
+   {
+    "key": "Name",
+    "value": "shop-prod-app-01"
+   }
+  ],
+  "third_party_integration": {},
+  "extended_summary_details": {
+   "network_interfaces": [
+    {
+     "privateIpAddress": "10.1.1.11",
+     "subnetId": "subnet-95ad1cdc",
+     "sourceDestCheck": true
+    }
+   ]
+  },
+  "alerts": []
+ },
+ {
+  "_id": {
+   "$oid": "6f9c31769ad85c974c73fca8"
+  },
+  "category": "Compute",
+  "config_type": "default_monitoring",
+  "metric": "Percentage CPU",
+  "resourceId": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-worker-01",
+  "account_id": "db24d7e5ead5cf36344ab869",
+  "to_date": {
+   "$date": "2026-08-10T23:59:59.999Z"
+  },
+  "element_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-worker-01",
+  "from_date": {
+   "$date": "2026-08-10T00:00:00.000Z"
+  },
+  "display_name": "Percentage CPU",
+  "group_name": "Percentage CPU",
+  "metric_group_name": "Percentage CPU",
+  "metric_value": [
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T00:00:00.000Z"
+    },
+    "average": 18.937428,
+    "minimum": 15.038492,
+    "maximum": 20.931481
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T01:00:00.000Z"
+    },
+    "average": 21.883019,
+    "minimum": 20.039786,
+    "maximum": 22.084535
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T02:00:00.000Z"
+    },
+    "average": 92.329626,
+    "minimum": 90.10939,
+    "maximum": 95.0663
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T03:00:00.000Z"
+    },
+    "average": 93.164409,
+    "minimum": 91.267646,
+    "maximum": 93.74933
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T04:00:00.000Z"
+    },
+    "average": 93.137814,
+    "minimum": 90.419862,
+    "maximum": 94.007623
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T05:00:00.000Z"
+    },
+    "average": 22.656386,
+    "minimum": 17.026678,
+    "maximum": 22.811739
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T06:00:00.000Z"
+    },
+    "average": 20.520059,
+    "minimum": 18.258334,
+    "maximum": 21.675065
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T07:00:00.000Z"
+    },
+    "average": 18.511153,
+    "minimum": 16.289086,
+    "maximum": 19.56047
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T08:00:00.000Z"
+    },
+    "average": 16.840969,
+    "minimum": 13.549335,
+    "maximum": 16.893474
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T09:00:00.000Z"
+    },
+    "average": 13.354565,
+    "minimum": 7.548974,
+    "maximum": 17.830491
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T10:00:00.000Z"
+    },
+    "average": 11.19997,
+    "minimum": 7.764308,
+    "maximum": 12.280394
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T11:00:00.000Z"
+    },
+    "average": 9.985392,
+    "minimum": 7.338368,
+    "maximum": 16.257866
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T12:00:00.000Z"
+    },
+    "average": 10.385414,
+    "minimum": 6.872424,
+    "maximum": 16.046745
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T13:00:00.000Z"
+    },
+    "average": 8.115764,
+    "minimum": 7.40323,
+    "maximum": 11.985877
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T14:00:00.000Z"
+    },
+    "average": 9.754203,
+    "minimum": 8.29651,
+    "maximum": 13.544185
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T15:00:00.000Z"
+    },
+    "average": 7.423459,
+    "minimum": 7.141351,
+    "maximum": 7.492385
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T16:00:00.000Z"
+    },
+    "average": 8.497963,
+    "minimum": 6.391487,
+    "maximum": 11.833696
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T17:00:00.000Z"
+    },
+    "average": 7.384695,
+    "minimum": 5.783575,
+    "maximum": 8.944077
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T18:00:00.000Z"
+    },
+    "average": 7.324494,
+    "minimum": 3.912857,
+    "maximum": 8.468832
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T19:00:00.000Z"
+    },
+    "average": 10.950593,
+    "minimum": 2.521882,
+    "maximum": 11.94506
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T20:00:00.000Z"
+    },
+    "average": 10.83439,
+    "minimum": 7.237439,
+    "maximum": 12.64445
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T21:00:00.000Z"
+    },
+    "average": 10.015994,
+    "minimum": 6.910021,
+    "maximum": 10.878562
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T22:00:00.000Z"
+    },
+    "average": 13.324898,
+    "minimum": 11.831712,
+    "maximum": 13.850064
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T23:00:00.000Z"
+    },
+    "average": 14.905123,
+    "minimum": 13.962125,
+    "maximum": 15.310235
+   }
+  ],
+  "namespace": "Microsoft.Compute/virtualMachines",
+  "name": "analytics-staging-rg",
+  "resource_name": "analytics-staging-worker-01",
+  "uri": "Azure/Compute/Virtual_Machines/Virtual_Machines",
+  "unit": "Percent",
+  "updated_at": {
+   "$date": "2026-08-11T00:13:59.999Z"
+  },
+  "inventory_id": {
+   "$oid": "2453cc6df54365139dc4765c"
+  },
+  "resource_filter": "analytics-staging-rg",
+  "operation_id": "VirtualMachinesList",
+  "component": "Virtual_Machines",
+  "created_at": {
+   "$date": "2026-08-11T00:13:59.999Z"
+  },
+  "created_by": "coreteam_rootaccount",
+  "custom_metrics": {},
+  "location": "centralus",
+  "region": "centralus",
+  "meta_data": {},
+  "project": "2d92ac2a18309d082049e39e",
+  "resource": "Virtual_Machines",
+  "resource_type": "Virtual_Machines",
+  "account_name": "CS_SaaS_Staging_Platform",
+  "service_name": "Azure",
+  "service_type": "Cloud",
+  "summary_details": {
+   "name": "analytics-staging-worker-01",
+   "id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-worker-01",
+   "type": "Microsoft.Compute/virtualMachines",
+   "location": "centralus",
+   "tags": {
+    "app": "analytics",
+    "tier": "worker",
+    "env": "staging",
+    "owner": "cloudops",
+    "cost-center": "CC-66d9",
+    "Name": "analytics-staging-worker-01"
+   },
+   "properties": {
+    "hardwareProfile": {
+     "vmSize": "Standard_B2s"
+    },
+    "provisioningState": "Succeeded",
+    "vmId": "4f221d87-86c0-7462-487a-06433546df70",
+    "storageProfile": {
+     "imageReference": {
+      "publisher": "canonical",
+      "offer": "ubuntu-24_04-lts",
+      "sku": "server",
+      "version": "latest"
+     },
+     "osDisk": {
+      "osType": "Linux",
+      "name": "analytics-staging-worker-01_osdisk",
+      "createOption": "FromImage",
+      "caching": "ReadWrite",
+      "diskSizeGB": 64,
+      "managedDisk": {
+       "id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/disks/analytics-staging-worker-01_osdisk"
+      }
+     },
+     "dataDisks": []
+    },
+    "osProfile": {
+     "computerName": "analytics-staging-worker-01",
+     "adminUsername": "azureuser"
+    },
+    "diagnosticsProfile": {
+     "bootDiagnostics": {
+      "enabled": true
+     }
+    }
+   },
+   "zones": [
+    "1"
+   ],
+   "status": "VM running"
+  },
+  "tags": [
+   {
+    "key": "app",
+    "value": "analytics"
+   },
+   {
+    "key": "tier",
+    "value": "worker"
+   },
+   {
+    "key": "env",
+    "value": "staging"
+   },
+   {
+    "key": "owner",
+    "value": "cloudops"
+   },
+   {
+    "key": "cost-center",
+    "value": "CC-66d9"
+   },
+   {
+    "key": "Name",
+    "value": "analytics-staging-worker-01"
+   }
+  ],
+  "third_party_integration": {},
+  "extended_summary_details": {
+   "network_interfaces_details": {
+    "name": "analytics-staging-worker-01-nic",
+    "id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Network/networkInterfaces/analytics-staging-worker-01-nic",
+    "properties": {
+     "provisioningState": "Succeeded",
+     "enableAcceleratedNetworking": false,
+     "enableIPForwarding": false,
+     "nicType": "Standard",
+     "ipConfigurations": [
+      {
+       "name": "ipconfig1",
+       "properties": {
+        "privateIPAddress": "10.2.0.5",
+        "privateIPAllocationMethod": "Dynamic",
+        "primary": true
+       }
+      }
+     ]
+    },
+    "location": "centralus"
+   }
+  },
+  "alerts": [
+   {
+    "alert_id": "alr-29e3a5cf9dc3d8",
+    "alert_name": "analytics-staging-worker-01-HighCpuUtilization-Critical",
+    "alert_rule_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/microsoft.insights/metricalerts/analytics-staging-worker-01-HighCpuUtilization-Critical",
+    "alert_source": "Azure Monitor Metric Alert",
+    "severity": "Critical",
+    "provider_severity": "Sev1",
+    "state": "Resolved",
+    "metric": "Percentage CPU",
+    "operator": "GreaterThan",
+    "aggregation": "Average",
+    "threshold": 90.0,
+    "expected_value": null,
+    "observed_value": 93.1644,
+    "condition_type": "static",
+    "evaluation_periods": 2,
+    "period_minutes": 60,
+    "fired_at": {
+     "$date": "2026-08-10T03:55:00.000Z"
+    },
+    "resolved_at": {
+     "$date": "2026-08-10T05:55:00.000Z"
+    },
+    "duration_minutes": 120,
+    "is_continuation": false,
+    "description": "CPU utilization above 90% for 2 consecutive hourly period(s)"
+   },
+   {
+    "alert_id": "alr-a0a21ab27f5231",
+    "alert_name": "analytics-staging-worker-01-HighCpuUtilization-Warning",
+    "alert_rule_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/microsoft.insights/metricalerts/analytics-staging-worker-01-HighCpuUtilization-Warning",
+    "alert_source": "Azure Monitor Metric Alert",
+    "severity": "Warning",
+    "provider_severity": "Sev2",
+    "state": "Resolved",
+    "metric": "Percentage CPU",
+    "operator": "GreaterThan",
+    "aggregation": "Average",
+    "threshold": 75.0,
+    "expected_value": null,
+    "observed_value": 93.1644,
+    "condition_type": "static",
+    "evaluation_periods": 2,
+    "period_minutes": 60,
+    "fired_at": {
+     "$date": "2026-08-10T03:55:00.000Z"
+    },
+    "resolved_at": {
+     "$date": "2026-08-10T05:55:00.000Z"
+    },
+    "duration_minutes": 120,
+    "is_continuation": false,
+    "description": "CPU utilization above 75% for 2 consecutive hourly period(s)"
+   }
+  ]
+ },
+ {
+  "_id": {
+   "$oid": "36c75c3e84a68250e480ad49"
+  },
+  "category": "Compute",
+  "config_type": "default_monitoring",
+  "metric": "compute.googleapis.com/instance/cpu/utilization",
+  "resourceId": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-worker-01",
+  "account_id": "d71a61f837b58f665add7166",
+  "to_date": {
+   "$date": "2026-08-10T23:59:59.999Z"
+  },
+  "element_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-worker-01",
+  "from_date": {
+   "$date": "2026-08-10T00:00:00.000Z"
+  },
+  "display_name": "compute.googleapis.com/instance/cpu/utilization",
+  "group_name": "compute.googleapis.com/instance/cpu/utilization",
+  "metric_group_name": "compute.googleapis.com/instance/cpu/utilization",
+  "metric_value": [
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T00:00:00.000Z"
+    },
+    "average": 0.212464,
+    "minimum": 0.179432,
+    "maximum": 0.229928
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T01:00:00.000Z"
+    },
+    "average": 0.252988,
+    "minimum": 0.235602,
+    "maximum": 0.326907
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T02:00:00.000Z"
+    },
+    "average": 0.929102,
+    "minimum": 0.887399,
+    "maximum": 0.945867
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T03:00:00.000Z"
+    },
+    "average": 0.925878,
+    "minimum": 0.876161,
+    "maximum": 0.93619
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T04:00:00.000Z"
+    },
+    "average": 0.925234,
+    "minimum": 0.886759,
+    "maximum": 0.972273
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T05:00:00.000Z"
+    },
+    "average": 0.217886,
+    "minimum": 0.208977,
+    "maximum": 0.250869
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T06:00:00.000Z"
+    },
+    "average": 0.210261,
+    "minimum": 0.167061,
+    "maximum": 0.256085
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T07:00:00.000Z"
+    },
+    "average": 0.163447,
+    "minimum": 0.028739,
+    "maximum": 0.169776
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T08:00:00.000Z"
+    },
+    "average": 0.160639,
+    "minimum": 0.137691,
+    "maximum": 0.170101
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T09:00:00.000Z"
+    },
+    "average": 0.116779,
+    "minimum": 0.116763,
+    "maximum": 0.150706
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T10:00:00.000Z"
+    },
+    "average": 0.127121,
+    "minimum": 0.113323,
+    "maximum": 0.1283
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T11:00:00.000Z"
+    },
+    "average": 0.118548,
+    "minimum": 0.083509,
+    "maximum": 0.163962
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T12:00:00.000Z"
+    },
+    "average": 0.097696,
+    "minimum": 0.080467,
+    "maximum": 0.112874
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T13:00:00.000Z"
+    },
+    "average": 0.090562,
+    "minimum": 0.083223,
+    "maximum": 0.107562
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T14:00:00.000Z"
+    },
+    "average": 0.081794,
+    "minimum": 0.070976,
+    "maximum": 0.087385
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T15:00:00.000Z"
+    },
+    "average": 0.083813,
+    "minimum": 0.076361,
+    "maximum": 0.09919
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T16:00:00.000Z"
+    },
+    "average": 0.079077,
+    "minimum": 0.050657,
+    "maximum": 0.098627
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T17:00:00.000Z"
+    },
+    "average": 0.085285,
+    "minimum": 0.028389,
+    "maximum": 0.091856
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T18:00:00.000Z"
+    },
+    "average": 0.091262,
+    "minimum": 0.069213,
+    "maximum": 0.150206
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T19:00:00.000Z"
+    },
+    "average": 0.094934,
+    "minimum": 0.024762,
+    "maximum": 0.112002
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T20:00:00.000Z"
+    },
+    "average": 0.106517,
+    "minimum": 0.076389,
+    "maximum": 0.120393
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T21:00:00.000Z"
+    },
+    "average": 0.118327,
+    "minimum": 0.10813,
+    "maximum": 0.132453
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T22:00:00.000Z"
+    },
+    "average": 0.128545,
+    "minimum": 0.093155,
+    "maximum": 0.132836
+   },
+   {
+    "timeStamp": {
+     "$date": "2026-08-10T23:00:00.000Z"
+    },
+    "average": 0.188793,
+    "minimum": 0.186257,
+    "maximum": 0.225652
+   }
+  ],
+  "namespace": "compute.googleapis.com",
+  "name": "analytics-staging-e0826",
+  "resource_name": "analytics-staging-worker-01",
+  "uri": "GCP/Compute/Compute_Engine/Instance",
+  "unit": "Ratio",
+  "updated_at": {
+   "$date": "2026-08-11T00:18:59.999Z"
+  },
+  "inventory_id": {
+   "$oid": "44569baba7b27e07bee2b820"
+  },
+  "resource_filter": "us-central1-a",
+  "operation_id": "compute.instances.list",
+  "component": "Compute_Engine",
+  "created_at": {
+   "$date": "2026-08-11T00:18:59.999Z"
+  },
+  "created_by": "coreteam_rootaccount",
+  "custom_metrics": {},
+  "location": "us-central1-a",
+  "region": "us-central1",
+  "meta_data": {},
+  "project": "87617a9151eaff411b02e5f9",
+  "resource": "Instances",
+  "resource_type": "Compute_Engine",
+  "account_name": "gcp-analytics-staging",
+  "service_name": "GCP",
+  "service_type": "Cloud",
+  "summary_details": {
+   "id": "1043244317994161232",
+   "name": "analytics-staging-worker-01",
+   "zone": "https://www.googleapis.com/compute/v1/projects/analytics-staging-e0826/zones/us-central1-a",
+   "machineType": "https://www.googleapis.com/compute/v1/projects/analytics-staging-e0826/zones/us-central1-a/machineTypes/e2-small",
+   "status": "RUNNING",
+   "cpuPlatform": "Intel Broadwell",
+   "canIpForward": false,
+   "deletionProtection": false,
+   "scheduling": {
+    "preemptible": false,
+    "provisioningModel": "STANDARD",
+    "automaticRestart": true,
+    "onHostMaintenance": "MIGRATE"
+   },
+   "disks": [
+    {
+     "boot": true,
+     "diskSizeGb": "30",
+     "type": "PERSISTENT",
+     "autoDelete": true,
+     "deviceName": "boot",
+     "source": "projects/analytics-staging-e0826/zones/us-central1-a/disks/analytics-staging-worker-01"
+    }
+   ],
+   "shieldedInstanceConfig": {
+    "enableSecureBoot": false,
+    "enableVtpm": true,
+    "enableIntegrityMonitoring": true
+   },
+   "networkInterfaces": [
+    {
+     "accessConfigs": [
+      {
+       "networkTier": "PREMIUM"
+      }
+     ]
+    }
+   ],
+   "labels": {
+    "app": "analytics",
+    "tier": "worker",
+    "env": "staging",
+    "owner": "cloudops",
+    "cost-center": "CC-66d9"
+   }
+  },
+  "tags": [
+   {
+    "key": "app",
+    "value": "analytics"
+   },
+   {
+    "key": "tier",
+    "value": "worker"
+   },
+   {
+    "key": "env",
+    "value": "staging"
+   },
+   {
+    "key": "owner",
+    "value": "cloudops"
+   },
+   {
+    "key": "cost-center",
+    "value": "CC-66d9"
+   }
+  ],
+  "third_party_integration": {},
+  "extended_summary_details": {
+   "network_interface_details": {
+    "network": "projects/analytics-staging-e0826/global/networks/default",
+    "subnetwork": "default"
+   }
+  },
+  "alerts": [
+   {
+    "alert_id": "alr-634f0bd3c29afc",
+    "alert_name": "analytics-staging-worker-01-HighCpuUtilization-Critical",
+    "alert_rule_id": "projects/analytics-staging-e0826/alertPolicies/f500676e6e58",
+    "alert_source": "Cloud Monitoring Alert Policy",
+    "severity": "Critical",
+    "provider_severity": "CRITICAL",
+    "state": "Resolved",
+    "metric": "compute.googleapis.com/instance/cpu/utilization",
+    "operator": "COMPARISON_GT",
+    "aggregation": "Average",
+    "threshold": 0.9,
+    "expected_value": null,
+    "observed_value": 0.9291,
+    "condition_type": "static",
+    "evaluation_periods": 2,
+    "period_minutes": 60,
+    "fired_at": {
+     "$date": "2026-08-10T03:55:00.000Z"
+    },
+    "resolved_at": {
+     "$date": "2026-08-10T05:55:00.000Z"
+    },
+    "duration_minutes": 120,
+    "is_continuation": false,
+    "description": "CPU utilization above 90% for 2 consecutive hourly period(s)"
+   },
+   {
+    "alert_id": "alr-4360d8a0f99138",
+    "alert_name": "analytics-staging-worker-01-HighCpuUtilization-Warning",
+    "alert_rule_id": "projects/analytics-staging-e0826/alertPolicies/31501cd621e5",
+    "alert_source": "Cloud Monitoring Alert Policy",
+    "severity": "Warning",
+    "provider_severity": "WARNING",
+    "state": "Resolved",
+    "metric": "compute.googleapis.com/instance/cpu/utilization",
+    "operator": "COMPARISON_GT",
+    "aggregation": "Average",
+    "threshold": 0.75,
+    "expected_value": null,
+    "observed_value": 0.9291,
+    "condition_type": "static",
+    "evaluation_periods": 2,
+    "period_minutes": 60,
+    "fired_at": {
+     "$date": "2026-08-10T03:55:00.000Z"
+    },
+    "resolved_at": {
+     "$date": "2026-08-10T05:55:00.000Z"
+    },
+    "duration_minutes": 120,
+    "is_continuation": false,
+    "description": "CPU utilization above 75% for 2 consecutive hourly period(s)"
+   }
+  ]
+ }
+]

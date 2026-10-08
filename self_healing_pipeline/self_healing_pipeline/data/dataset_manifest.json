@@ -1,0 +1,739 @@
+{
+ "generated_with": {
+  "days": 70,
+  "end_date": "2026-09-18",
+  "start_date": "2026-07-11",
+  "seed": 42,
+  "providers": [
+   "AWS",
+   "Azure",
+   "GCP"
+  ],
+  "projects": [
+   "p1",
+   "p2"
+  ]
+ },
+ "counts": {
+  "documents": 7980,
+  "series": 114,
+  "resources": 30,
+  "documents_with_alerts": 230,
+  "alert_episodes": {
+   "AWS:Critical": 28,
+   "AWS:Warning": 32,
+   "Azure:Critical": 24,
+   "Azure:Warning": 31,
+   "GCP:Critical": 29,
+   "GCP:Warning": 38
+  },
+  "ground_truth_incidents": 66,
+  "expected_recommendations": 60,
+  "negative_cases": 6
+ },
+ "use_cases": {
+  "UC1": "CPU saturation & root-cause split (traffic vs runaway process vs scheduled load)",
+  "UC2": "Memory pressure (leak vs release step-change)",
+  "UC3": "Burstable / shared-core CPU credit exhaustion",
+  "UC4": "Disk capacity exhaustion (steady log growth vs sudden fill)",
+  "UC5": "Network anomaly (ingress surge, egress spike, traffic loss)"
+ },
+ "main_metrics_per_use_case_and_provider": {
+  "UC1": {
+   "AWS": [
+    "CPUUtilization",
+    "NetworkIn",
+    "mem_used_percent"
+   ],
+   "Azure": [
+    "Percentage CPU",
+    "Network In Total",
+    "Available Memory Bytes"
+   ],
+   "GCP": [
+    "compute.googleapis.com/instance/cpu/utilization",
+    "compute.googleapis.com/instance/network/received_bytes_count",
+    "agent.googleapis.com/memory/percent_used"
+   ]
+  },
+  "UC2": {
+   "AWS": [
+    "mem_used_percent",
+    "CPUUtilization"
+   ],
+   "Azure": [
+    "Available Memory Bytes",
+    "Percentage CPU"
+   ],
+   "GCP": [
+    "agent.googleapis.com/memory/percent_used",
+    "compute.googleapis.com/instance/cpu/utilization"
+   ]
+  },
+  "UC3": {
+   "AWS": [
+    "CPUCreditBalance",
+    "CPUUtilization"
+   ],
+   "Azure": [
+    "CPU Credits Remaining",
+    "Percentage CPU"
+   ],
+   "GCP": [
+    "compute.googleapis.com/instance/cpu/utilization",
+    "compute.googleapis.com/instance/cpu/scheduler_wait_time"
+   ]
+  },
+  "UC4": {
+   "AWS": [
+    "disk_used_percent",
+    "DiskWriteBytes"
+   ],
+   "Azure": [
+    "disk/free_percent",
+    "Disk Write Bytes"
+   ],
+   "GCP": [
+    "agent.googleapis.com/disk/percent_used",
+    "compute.googleapis.com/instance/disk/write_bytes_count"
+   ]
+  },
+  "UC5": {
+   "AWS": [
+    "NetworkIn",
+    "NetworkOut",
+    "CPUUtilization"
+   ],
+   "Azure": [
+    "Network In Total",
+    "Network Out Total",
+    "Percentage CPU"
+   ],
+   "GCP": [
+    "compute.googleapis.com/instance/network/received_bytes_count",
+    "compute.googleapis.com/instance/network/sent_bytes_count",
+    "compute.googleapis.com/instance/cpu/utilization"
+   ]
+  }
+ },
+ "fleet": [
+  {
+   "provider": "AWS",
+   "project_key": "p1",
+   "project_id": "0ea168b889dfd6f436619b1d",
+   "resource_id": "i-9bf1b988d6e0e7680",
+   "resource_name": "shop-prod-web-01",
+   "tier": "web",
+   "instance_type": "m5.large",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "CPUUtilization",
+    "mem_used_percent",
+    "NetworkIn",
+    "NetworkOut"
+   ]
+  },
+  {
+   "provider": "AWS",
+   "project_key": "p1",
+   "project_id": "0ea168b889dfd6f436619b1d",
+   "resource_id": "i-35b4f54deecaba7e3",
+   "resource_name": "shop-prod-web-02",
+   "tier": "web",
+   "instance_type": "m5.large",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "CPUUtilization",
+    "mem_used_percent",
+    "NetworkIn",
+    "NetworkOut"
+   ]
+  },
+  {
+   "provider": "AWS",
+   "project_key": "p1",
+   "project_id": "0ea168b889dfd6f436619b1d",
+   "resource_id": "i-267a54179a56bfc76",
+   "resource_name": "shop-prod-app-01",
+   "tier": "app",
+   "instance_type": "m5.large",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "CPUUtilization",
+    "mem_used_percent",
+    "NetworkIn",
+    "NetworkOut"
+   ]
+  },
+  {
+   "provider": "AWS",
+   "project_key": "p1",
+   "project_id": "0ea168b889dfd6f436619b1d",
+   "resource_id": "i-9fa5580ba5f47d783",
+   "resource_name": "shop-prod-worker-01",
+   "tier": "worker",
+   "instance_type": "t3.small",
+   "roles": [
+    "cpu",
+    "mem",
+    "credit"
+   ],
+   "native_metrics": [
+    "CPUUtilization",
+    "mem_used_percent",
+    "CPUCreditBalance"
+   ]
+  },
+  {
+   "provider": "AWS",
+   "project_key": "p1",
+   "project_id": "0ea168b889dfd6f436619b1d",
+   "resource_id": "i-b68a0d8e63f3d8efa",
+   "resource_name": "shop-prod-db-01",
+   "tier": "db",
+   "instance_type": "r5.large",
+   "roles": [
+    "cpu",
+    "mem",
+    "disk",
+    "disk_write"
+   ],
+   "native_metrics": [
+    "CPUUtilization",
+    "mem_used_percent",
+    "disk_used_percent",
+    "DiskWriteBytes"
+   ]
+  },
+  {
+   "provider": "AWS",
+   "project_key": "p2",
+   "project_id": "8eb0ed015214dcc577a7790c",
+   "resource_id": "i-191a7052deec83c76",
+   "resource_name": "analytics-staging-web-01",
+   "tier": "web",
+   "instance_type": "c5.large",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "CPUUtilization",
+    "mem_used_percent",
+    "NetworkIn",
+    "NetworkOut"
+   ]
+  },
+  {
+   "provider": "AWS",
+   "project_key": "p2",
+   "project_id": "8eb0ed015214dcc577a7790c",
+   "resource_id": "i-a2abff6662e7454e0",
+   "resource_name": "analytics-staging-web-02",
+   "tier": "web",
+   "instance_type": "c5.large",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "CPUUtilization",
+    "mem_used_percent",
+    "NetworkIn",
+    "NetworkOut"
+   ]
+  },
+  {
+   "provider": "AWS",
+   "project_key": "p2",
+   "project_id": "8eb0ed015214dcc577a7790c",
+   "resource_id": "i-f70f0e50b5349d160",
+   "resource_name": "analytics-staging-app-01",
+   "tier": "app",
+   "instance_type": "m5.large",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "CPUUtilization",
+    "mem_used_percent",
+    "NetworkIn",
+    "NetworkOut"
+   ]
+  },
+  {
+   "provider": "AWS",
+   "project_key": "p2",
+   "project_id": "8eb0ed015214dcc577a7790c",
+   "resource_id": "i-33c31443a0c115b3a",
+   "resource_name": "analytics-staging-worker-01",
+   "tier": "worker",
+   "instance_type": "t3.small",
+   "roles": [
+    "cpu",
+    "mem",
+    "credit"
+   ],
+   "native_metrics": [
+    "CPUUtilization",
+    "mem_used_percent",
+    "CPUCreditBalance"
+   ]
+  },
+  {
+   "provider": "AWS",
+   "project_key": "p2",
+   "project_id": "8eb0ed015214dcc577a7790c",
+   "resource_id": "i-8b73748d249dd3755",
+   "resource_name": "analytics-staging-db-01",
+   "tier": "db",
+   "instance_type": "r5.large",
+   "roles": [
+    "cpu",
+    "mem",
+    "disk",
+    "disk_write"
+   ],
+   "native_metrics": [
+    "CPUUtilization",
+    "mem_used_percent",
+    "disk_used_percent",
+    "DiskWriteBytes"
+   ]
+  },
+  {
+   "provider": "Azure",
+   "project_key": "p1",
+   "project_id": "2905549d65151bebc9ae262f",
+   "resource_id": "/subscriptions/7f77381a-3086-8678-a95e-71b40b779460/resourceGroups/shop-prod-rg/providers/Microsoft.Compute/virtualMachines/shop-prod-web-01",
+   "resource_name": "shop-prod-web-01",
+   "tier": "web",
+   "instance_type": "Standard_D2s_v5",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "Percentage CPU",
+    "Available Memory Bytes",
+    "Network In Total",
+    "Network Out Total"
+   ]
+  },
+  {
+   "provider": "Azure",
+   "project_key": "p1",
+   "project_id": "2905549d65151bebc9ae262f",
+   "resource_id": "/subscriptions/7f77381a-3086-8678-a95e-71b40b779460/resourceGroups/shop-prod-rg/providers/Microsoft.Compute/virtualMachines/shop-prod-web-02",
+   "resource_name": "shop-prod-web-02",
+   "tier": "web",
+   "instance_type": "Standard_D2s_v5",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "Percentage CPU",
+    "Available Memory Bytes",
+    "Network In Total",
+    "Network Out Total"
+   ]
+  },
+  {
+   "provider": "Azure",
+   "project_key": "p1",
+   "project_id": "2905549d65151bebc9ae262f",
+   "resource_id": "/subscriptions/7f77381a-3086-8678-a95e-71b40b779460/resourceGroups/shop-prod-rg/providers/Microsoft.Compute/virtualMachines/shop-prod-app-01",
+   "resource_name": "shop-prod-app-01",
+   "tier": "app",
+   "instance_type": "Standard_D2s_v5",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "Percentage CPU",
+    "Available Memory Bytes",
+    "Network In Total",
+    "Network Out Total"
+   ]
+  },
+  {
+   "provider": "Azure",
+   "project_key": "p1",
+   "project_id": "2905549d65151bebc9ae262f",
+   "resource_id": "/subscriptions/7f77381a-3086-8678-a95e-71b40b779460/resourceGroups/shop-prod-rg/providers/Microsoft.Compute/virtualMachines/shop-prod-worker-01",
+   "resource_name": "shop-prod-worker-01",
+   "tier": "worker",
+   "instance_type": "Standard_B2s",
+   "roles": [
+    "cpu",
+    "mem",
+    "credit"
+   ],
+   "native_metrics": [
+    "Percentage CPU",
+    "Available Memory Bytes",
+    "CPU Credits Remaining"
+   ]
+  },
+  {
+   "provider": "Azure",
+   "project_key": "p1",
+   "project_id": "2905549d65151bebc9ae262f",
+   "resource_id": "/subscriptions/7f77381a-3086-8678-a95e-71b40b779460/resourceGroups/shop-prod-rg/providers/Microsoft.Compute/virtualMachines/shop-prod-db-01",
+   "resource_name": "shop-prod-db-01",
+   "tier": "db",
+   "instance_type": "Standard_E2s_v5",
+   "roles": [
+    "cpu",
+    "mem",
+    "disk",
+    "disk_write"
+   ],
+   "native_metrics": [
+    "Percentage CPU",
+    "Available Memory Bytes",
+    "disk/free_percent",
+    "Disk Write Bytes"
+   ]
+  },
+  {
+   "provider": "Azure",
+   "project_key": "p2",
+   "project_id": "2d92ac2a18309d082049e39e",
+   "resource_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-web-01",
+   "resource_name": "analytics-staging-web-01",
+   "tier": "web",
+   "instance_type": "Standard_F2s_v2",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "Percentage CPU",
+    "Available Memory Bytes",
+    "Network In Total",
+    "Network Out Total"
+   ]
+  },
+  {
+   "provider": "Azure",
+   "project_key": "p2",
+   "project_id": "2d92ac2a18309d082049e39e",
+   "resource_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-web-02",
+   "resource_name": "analytics-staging-web-02",
+   "tier": "web",
+   "instance_type": "Standard_F2s_v2",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "Percentage CPU",
+    "Available Memory Bytes",
+    "Network In Total",
+    "Network Out Total"
+   ]
+  },
+  {
+   "provider": "Azure",
+   "project_key": "p2",
+   "project_id": "2d92ac2a18309d082049e39e",
+   "resource_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-app-01",
+   "resource_name": "analytics-staging-app-01",
+   "tier": "app",
+   "instance_type": "Standard_D2s_v5",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "Percentage CPU",
+    "Available Memory Bytes",
+    "Network In Total",
+    "Network Out Total"
+   ]
+  },
+  {
+   "provider": "Azure",
+   "project_key": "p2",
+   "project_id": "2d92ac2a18309d082049e39e",
+   "resource_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-worker-01",
+   "resource_name": "analytics-staging-worker-01",
+   "tier": "worker",
+   "instance_type": "Standard_B2s",
+   "roles": [
+    "cpu",
+    "mem",
+    "credit"
+   ],
+   "native_metrics": [
+    "Percentage CPU",
+    "Available Memory Bytes",
+    "CPU Credits Remaining"
+   ]
+  },
+  {
+   "provider": "Azure",
+   "project_key": "p2",
+   "project_id": "2d92ac2a18309d082049e39e",
+   "resource_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-db-01",
+   "resource_name": "analytics-staging-db-01",
+   "tier": "db",
+   "instance_type": "Standard_D4s_v5",
+   "roles": [
+    "cpu",
+    "mem",
+    "disk",
+    "disk_write"
+   ],
+   "native_metrics": [
+    "Percentage CPU",
+    "Available Memory Bytes",
+    "disk/free_percent",
+    "Disk Write Bytes"
+   ]
+  },
+  {
+   "provider": "GCP",
+   "project_key": "p1",
+   "project_id": "8e2daaa4320861183e8fd276",
+   "resource_id": "projects/shop-prod-02df1/zones/us-central1-a/instances/shop-prod-web-01",
+   "resource_name": "shop-prod-web-01",
+   "tier": "web",
+   "instance_type": "e2-standard-2",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "compute.googleapis.com/instance/cpu/utilization",
+    "agent.googleapis.com/memory/percent_used",
+    "compute.googleapis.com/instance/network/received_bytes_count",
+    "compute.googleapis.com/instance/network/sent_bytes_count"
+   ]
+  },
+  {
+   "provider": "GCP",
+   "project_key": "p1",
+   "project_id": "8e2daaa4320861183e8fd276",
+   "resource_id": "projects/shop-prod-02df1/zones/us-central1-a/instances/shop-prod-web-02",
+   "resource_name": "shop-prod-web-02",
+   "tier": "web",
+   "instance_type": "e2-standard-2",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "compute.googleapis.com/instance/cpu/utilization",
+    "agent.googleapis.com/memory/percent_used",
+    "compute.googleapis.com/instance/network/received_bytes_count",
+    "compute.googleapis.com/instance/network/sent_bytes_count"
+   ]
+  },
+  {
+   "provider": "GCP",
+   "project_key": "p1",
+   "project_id": "8e2daaa4320861183e8fd276",
+   "resource_id": "projects/shop-prod-02df1/zones/us-central1-a/instances/shop-prod-app-01",
+   "resource_name": "shop-prod-app-01",
+   "tier": "app",
+   "instance_type": "n2-standard-2",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "compute.googleapis.com/instance/cpu/utilization",
+    "agent.googleapis.com/memory/percent_used",
+    "compute.googleapis.com/instance/network/received_bytes_count",
+    "compute.googleapis.com/instance/network/sent_bytes_count"
+   ]
+  },
+  {
+   "provider": "GCP",
+   "project_key": "p1",
+   "project_id": "8e2daaa4320861183e8fd276",
+   "resource_id": "projects/shop-prod-02df1/zones/us-central1-a/instances/shop-prod-worker-01",
+   "resource_name": "shop-prod-worker-01",
+   "tier": "worker",
+   "instance_type": "e2-small",
+   "roles": [
+    "cpu",
+    "mem",
+    "sched_wait"
+   ],
+   "native_metrics": [
+    "compute.googleapis.com/instance/cpu/utilization",
+    "agent.googleapis.com/memory/percent_used",
+    "compute.googleapis.com/instance/cpu/scheduler_wait_time"
+   ]
+  },
+  {
+   "provider": "GCP",
+   "project_key": "p1",
+   "project_id": "8e2daaa4320861183e8fd276",
+   "resource_id": "projects/shop-prod-02df1/zones/us-central1-a/instances/shop-prod-db-01",
+   "resource_name": "shop-prod-db-01",
+   "tier": "db",
+   "instance_type": "n2-standard-4",
+   "roles": [
+    "cpu",
+    "mem",
+    "disk",
+    "disk_write"
+   ],
+   "native_metrics": [
+    "compute.googleapis.com/instance/cpu/utilization",
+    "agent.googleapis.com/memory/percent_used",
+    "agent.googleapis.com/disk/percent_used",
+    "compute.googleapis.com/instance/disk/write_bytes_count"
+   ]
+  },
+  {
+   "provider": "GCP",
+   "project_key": "p2",
+   "project_id": "87617a9151eaff411b02e5f9",
+   "resource_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-web-01",
+   "resource_name": "analytics-staging-web-01",
+   "tier": "web",
+   "instance_type": "e2-standard-2",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "compute.googleapis.com/instance/cpu/utilization",
+    "agent.googleapis.com/memory/percent_used",
+    "compute.googleapis.com/instance/network/received_bytes_count",
+    "compute.googleapis.com/instance/network/sent_bytes_count"
+   ]
+  },
+  {
+   "provider": "GCP",
+   "project_key": "p2",
+   "project_id": "87617a9151eaff411b02e5f9",
+   "resource_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-web-02",
+   "resource_name": "analytics-staging-web-02",
+   "tier": "web",
+   "instance_type": "e2-standard-2",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "compute.googleapis.com/instance/cpu/utilization",
+    "agent.googleapis.com/memory/percent_used",
+    "compute.googleapis.com/instance/network/received_bytes_count",
+    "compute.googleapis.com/instance/network/sent_bytes_count"
+   ]
+  },
+  {
+   "provider": "GCP",
+   "project_key": "p2",
+   "project_id": "87617a9151eaff411b02e5f9",
+   "resource_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-app-01",
+   "resource_name": "analytics-staging-app-01",
+   "tier": "app",
+   "instance_type": "n2-standard-2",
+   "roles": [
+    "cpu",
+    "mem",
+    "net_in",
+    "net_out"
+   ],
+   "native_metrics": [
+    "compute.googleapis.com/instance/cpu/utilization",
+    "agent.googleapis.com/memory/percent_used",
+    "compute.googleapis.com/instance/network/received_bytes_count",
+    "compute.googleapis.com/instance/network/sent_bytes_count"
+   ]
+  },
+  {
+   "provider": "GCP",
+   "project_key": "p2",
+   "project_id": "87617a9151eaff411b02e5f9",
+   "resource_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-worker-01",
+   "resource_name": "analytics-staging-worker-01",
+   "tier": "worker",
+   "instance_type": "e2-small",
+   "roles": [
+    "cpu",
+    "mem",
+    "sched_wait"
+   ],
+   "native_metrics": [
+    "compute.googleapis.com/instance/cpu/utilization",
+    "agent.googleapis.com/memory/percent_used",
+    "compute.googleapis.com/instance/cpu/scheduler_wait_time"
+   ]
+  },
+  {
+   "provider": "GCP",
+   "project_key": "p2",
+   "project_id": "87617a9151eaff411b02e5f9",
+   "resource_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-db-01",
+   "resource_name": "analytics-staging-db-01",
+   "tier": "db",
+   "instance_type": "n2-standard-4",
+   "roles": [
+    "cpu",
+    "mem",
+    "disk",
+    "disk_write"
+   ],
+   "native_metrics": [
+    "compute.googleapis.com/instance/cpu/utilization",
+    "agent.googleapis.com/memory/percent_used",
+    "agent.googleapis.com/disk/percent_used",
+    "compute.googleapis.com/instance/disk/write_bytes_count"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1680 @@
+[
+ {
+  "incident_id": "GT-AWS-p1-web-01-traffic_surge",
+  "provider": "AWS",
+  "project_key": "p1",
+  "project_id": "0ea168b889dfd6f436619b1d",
+  "resource_id": "i-9bf1b988d6e0e7680",
+  "resource_name": "shop-prod-web-01",
+  "tier": "web",
+  "use_case": "UC1",
+  "scenario": "traffic_surge",
+  "note": "fleet-wide organic traffic surge (ramp), web-tier",
+  "window_start": "2026-08-13T12:00:00Z",
+  "window_end": "2026-08-14T08:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_TRAFFIC_SURGE",
+  "acceptable_root_causes": [
+   "CPU_TRAFFIC_SURGE"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 4,
+  "alert_metrics": [
+   "CPUUtilization",
+   "NetworkIn",
+   "NetworkOut"
+  ]
+ },
+ {
+  "incident_id": "GT-AWS-p1-web-01-net_ingress_anomaly",
+  "provider": "AWS",
+  "project_key": "p1",
+  "project_id": "0ea168b889dfd6f436619b1d",
+  "resource_id": "i-9bf1b988d6e0e7680",
+  "resource_name": "shop-prod-web-01",
+  "tier": "web",
+  "use_case": "UC5",
+  "scenario": "net_ingress_anomaly",
+  "note": "abrupt off-hours ingress step, attack/scan-like, CPU barely moves",
+  "window_start": "2026-08-31T02:00:00Z",
+  "window_end": "2026-08-31T15:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "NETWORK_INGRESS_ANOMALY",
+  "acceptable_root_causes": [
+   "NETWORK_INGRESS_ANOMALY"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "NetworkIn"
+  ]
+ },
+ {
+  "incident_id": "GT-AWS-p1-web-01-anomaly_no_alert",
+  "provider": "AWS",
+  "project_key": "p1",
+  "project_id": "0ea168b889dfd6f436619b1d",
+  "resource_id": "i-9bf1b988d6e0e7680",
+  "resource_name": "shop-prod-web-01",
+  "tier": "web",
+  "use_case": "UC1",
+  "scenario": "anomaly_no_alert",
+  "note": "CPU blip to ~66% - anomalous vs baseline but BELOW every alert threshold",
+  "window_start": "2026-09-09T14:00:00Z",
+  "window_end": "2026-09-09T18:00:00Z",
+  "expects_alert": false,
+  "expects_recommendation": false,
+  "expected_root_cause": null,
+  "acceptable_root_causes": [],
+  "root_resource_ids": [],
+  "n_alert_episodes": 0,
+  "alert_metrics": []
+ },
+ {
+  "incident_id": "GT-AWS-p1-web-02-traffic_surge",
+  "provider": "AWS",
+  "project_key": "p1",
+  "project_id": "0ea168b889dfd6f436619b1d",
+  "resource_id": "i-35b4f54deecaba7e3",
+  "resource_name": "shop-prod-web-02",
+  "tier": "web",
+  "use_case": "UC1",
+  "scenario": "traffic_surge",
+  "note": "same LB-driven surge on the peer web node",
+  "window_start": "2026-08-13T12:00:00Z",
+  "window_end": "2026-08-14T08:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_TRAFFIC_SURGE",
+  "acceptable_root_causes": [
+   "CPU_TRAFFIC_SURGE"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 4,
+  "alert_metrics": [
+   "CPUUtilization",
+   "NetworkIn",
+   "NetworkOut"
+  ]
+ },
+ {
+  "incident_id": "GT-AWS-p1-web-02-cpu_flapping",
+  "provider": "AWS",
+  "project_key": "p1",
+  "project_id": "0ea168b889dfd6f436619b1d",
+  "resource_id": "i-35b4f54deecaba7e3",
+  "resource_name": "shop-prod-web-02",
+  "tier": "web",
+  "use_case": "UC1",
+  "scenario": "cpu_flapping",
+  "note": "CPU oscillating around the 75% warning line -> alert fires/resolves repeatedly",
+  "window_start": "2026-08-26T09:00:00Z",
+  "window_end": "2026-08-26T23:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "ALERT_FLAPPING",
+  "acceptable_root_causes": [
+   "ALERT_FLAPPING"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 3,
+  "alert_metrics": [
+   "CPUUtilization"
+  ]
+ },
+ {
+  "incident_id": "GT-AWS-p1-app-01-downstream_surge",
+  "provider": "AWS",
+  "project_key": "p1",
+  "project_id": "0ea168b889dfd6f436619b1d",
+  "resource_id": "i-267a54179a56bfc76",
+  "resource_name": "shop-prod-app-01",
+  "tier": "app",
+  "use_case": "UC1",
+  "scenario": "downstream_surge",
+  "note": "CPU alert on app tier that is purely a consequence of the web-tier surge",
+  "window_start": "2026-08-13T13:00:00Z",
+  "window_end": "2026-08-14T09:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "UPSTREAM_PROPAGATION",
+  "acceptable_root_causes": [
+   "UPSTREAM_PROPAGATION"
+  ],
+  "root_resource_ids": [
+   "i-9bf1b988d6e0e7680",
+   "i-35b4f54deecaba7e3"
+  ],
+  "n_alert_episodes": 4,
+  "alert_metrics": [
+   "CPUUtilization",
+   "NetworkIn",
+   "NetworkOut"
+  ]
+ },
+ {
+  "incident_id": "GT-AWS-p1-app-01-memory_leak",
+  "provider": "AWS",
+  "project_key": "p1",
+  "project_id": "0ea168b889dfd6f436619b1d",
+  "resource_id": "i-267a54179a56bfc76",
+  "resource_name": "shop-prod-app-01",
+  "tier": "app",
+  "use_case": "UC2",
+  "scenario": "memory_leak",
+  "note": "linear memory growth for ~22 days, ends with a restart",
+  "window_start": "2026-08-22T00:00:00Z",
+  "window_end": "2026-09-12T18:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "MEMORY_LEAK",
+  "acceptable_root_causes": [
+   "MEMORY_LEAK"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 11,
+  "alert_metrics": [
+   "mem_used_percent"
+  ]
+ },
+ {
+  "incident_id": "GT-AWS-p1-worker-01-credit_exhaustion",
+  "provider": "AWS",
+  "project_key": "p1",
+  "project_id": "0ea168b889dfd6f436619b1d",
+  "resource_id": "i-9fa5580ba5f47d783",
+  "resource_name": "shop-prod-worker-01",
+  "tier": "worker",
+  "use_case": "UC3",
+  "scenario": "credit_exhaustion",
+  "note": "sustained demand above burst baseline for days -> credits hit zero -> throttled",
+  "window_start": "2026-08-16T00:00:00Z",
+  "window_end": "2026-08-26T12:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CREDIT_EXHAUSTION",
+  "acceptable_root_causes": [
+   "CREDIT_EXHAUSTION"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 6,
+  "alert_metrics": [
+   "CPUCreditBalance"
+  ]
+ },
+ {
+  "incident_id": "GT-AWS-p1-worker-01-transient_spike",
+  "provider": "AWS",
+  "project_key": "p1",
+  "project_id": "0ea168b889dfd6f436619b1d",
+  "resource_id": "i-9fa5580ba5f47d783",
+  "resource_name": "shop-prod-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "transient_spike",
+  "note": "2-hour CPU spike that self-resolves; nothing else deviates",
+  "window_start": "2026-09-06T11:00:00Z",
+  "window_end": "2026-09-06T17:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "TRANSIENT_SPIKE",
+  "acceptable_root_causes": [
+   "TRANSIENT_SPIKE"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "CPUUtilization"
+  ]
+ },
+ {
+  "incident_id": "GT-AWS-p1-db-01-disk_sudden_fill",
+  "provider": "AWS",
+  "project_key": "p1",
+  "project_id": "0ea168b889dfd6f436619b1d",
+  "resource_id": "i-b68a0d8e63f3d8efa",
+  "resource_name": "shop-prod-db-01",
+  "tier": "db",
+  "use_case": "UC4",
+  "scenario": "disk_sudden_fill",
+  "note": "core-dump / runaway export fills the volume within 3 hours",
+  "window_start": "2026-08-27T10:00:00Z",
+  "window_end": "2026-08-29T23:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "DISK_SUDDEN_FILL",
+  "acceptable_root_causes": [
+   "DISK_SUDDEN_FILL"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 1,
+  "alert_metrics": [
+   "disk_used_percent"
+  ]
+ },
+ {
+  "incident_id": "GT-AWS-p2-web-01-net_egress_anomaly",
+  "provider": "AWS",
+  "project_key": "p2",
+  "project_id": "8eb0ed015214dcc577a7790c",
+  "resource_id": "i-191a7052deec83c76",
+  "resource_name": "analytics-staging-web-01",
+  "tier": "web",
+  "use_case": "UC5",
+  "scenario": "net_egress_anomaly",
+  "note": "12h egress spike while ingress and CPU stay normal (bulk copy / exfil-like)",
+  "window_start": "2026-08-24T20:00:00Z",
+  "window_end": "2026-08-25T18:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "NETWORK_EGRESS_ANOMALY",
+  "acceptable_root_causes": [
+   "NETWORK_EGRESS_ANOMALY"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "NetworkOut"
+  ]
+ },
+ {
+  "incident_id": "GT-AWS-p2-web-02-net_traffic_loss",
+  "provider": "AWS",
+  "project_key": "p2",
+  "project_id": "8eb0ed015214dcc577a7790c",
+  "resource_id": "i-a2abff6662e7454e0",
+  "resource_name": "analytics-staging-web-02",
+  "tier": "web",
+  "use_case": "UC5",
+  "scenario": "net_traffic_loss",
+  "note": "VM stays up but traffic vanishes (LB / DNS / NSG change upstream)",
+  "window_start": "2026-09-04T09:00:00Z",
+  "window_end": "2026-09-05T01:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "NETWORK_TRAFFIC_LOSS",
+  "acceptable_root_causes": [
+   "NETWORK_TRAFFIC_LOSS"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "NetworkIn",
+   "NetworkOut"
+  ]
+ },
+ {
+  "incident_id": "GT-AWS-p2-app-01-memory_step",
+  "provider": "AWS",
+  "project_key": "p2",
+  "project_id": "8eb0ed015214dcc577a7790c",
+  "resource_id": "i-f70f0e50b5349d160",
+  "resource_name": "analytics-staging-app-01",
+  "tier": "app",
+  "use_case": "UC2",
+  "scenario": "memory_step",
+  "note": "release raises steady-state memory by ~23 points; rolled back later",
+  "window_start": "2026-08-21T10:00:00Z",
+  "window_end": "2026-09-07T17:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "MEMORY_STEP_CHANGE",
+  "acceptable_root_causes": [
+   "MEMORY_STEP_CHANGE"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 1,
+  "alert_metrics": [
+   "mem_used_percent"
+  ]
+ },
+ {
+  "incident_id": "GT-AWS-p2-app-01-data_gap",
+  "provider": "AWS",
+  "project_key": "p2",
+  "project_id": "8eb0ed015214dcc577a7790c",
+  "resource_id": "i-f70f0e50b5349d160",
+  "resource_name": "analytics-staging-app-01",
+  "tier": "app",
+  "use_case": "UC1",
+  "scenario": "data_gap",
+  "note": "monitoring gap (6 missing hourly points) - data-quality case, no alert",
+  "window_start": "2026-08-30T04:00:00Z",
+  "window_end": "2026-08-30T12:00:00Z",
+  "expects_alert": false,
+  "expects_recommendation": false,
+  "expected_root_cause": null,
+  "acceptable_root_causes": [],
+  "root_resource_ids": [],
+  "n_alert_episodes": 0,
+  "alert_metrics": []
+ },
+ {
+  "incident_id": "GT-AWS-p2-app-01-cpu_runaway",
+  "provider": "AWS",
+  "project_key": "p2",
+  "project_id": "8eb0ed015214dcc577a7790c",
+  "resource_id": "i-f70f0e50b5349d160",
+  "resource_name": "analytics-staging-app-01",
+  "tier": "app",
+  "use_case": "UC1",
+  "scenario": "cpu_runaway",
+  "note": "flat ~97% CPU with normal traffic and memory",
+  "window_start": "2026-09-12T06:00:00Z",
+  "window_end": "2026-09-12T19:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RUNAWAY_PROCESS",
+  "acceptable_root_causes": [
+   "CPU_RUNAWAY_PROCESS"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "CPUUtilization"
+  ]
+ },
+ {
+  "incident_id": "GT-AWS-p2-worker-01-recurring_batch-1",
+  "provider": "AWS",
+  "project_key": "p2",
+  "project_id": "8eb0ed015214dcc577a7790c",
+  "resource_id": "i-33c31443a0c115b3a",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-08-10T02:00:00Z",
+  "window_end": "2026-08-10T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RUNAWAY_PROCESS",
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "CPUUtilization"
+  ],
+  "episode_index": 0
+ },
+ {
+  "incident_id": "GT-AWS-p2-worker-01-recurring_batch-2",
+  "provider": "AWS",
+  "project_key": "p2",
+  "project_id": "8eb0ed015214dcc577a7790c",
+  "resource_id": "i-33c31443a0c115b3a",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-08-17T02:00:00Z",
+  "window_end": "2026-08-17T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RUNAWAY_PROCESS",
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "CPUUtilization"
+  ],
+  "episode_index": 1
+ },
+ {
+  "incident_id": "GT-AWS-p2-worker-01-recurring_batch-3",
+  "provider": "AWS",
+  "project_key": "p2",
+  "project_id": "8eb0ed015214dcc577a7790c",
+  "resource_id": "i-33c31443a0c115b3a",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-08-24T02:00:00Z",
+  "window_end": "2026-08-24T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "CPUUtilization"
+  ],
+  "episode_index": 2
+ },
+ {
+  "incident_id": "GT-AWS-p2-worker-01-recurring_batch-4",
+  "provider": "AWS",
+  "project_key": "p2",
+  "project_id": "8eb0ed015214dcc577a7790c",
+  "resource_id": "i-33c31443a0c115b3a",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-08-31T02:00:00Z",
+  "window_end": "2026-08-31T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "CPUUtilization"
+  ],
+  "episode_index": 3
+ },
+ {
+  "incident_id": "GT-AWS-p2-worker-01-recurring_batch-5",
+  "provider": "AWS",
+  "project_key": "p2",
+  "project_id": "8eb0ed015214dcc577a7790c",
+  "resource_id": "i-33c31443a0c115b3a",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-09-07T02:00:00Z",
+  "window_end": "2026-09-07T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "CPUUtilization"
+  ],
+  "episode_index": 4
+ },
+ {
+  "incident_id": "GT-AWS-p2-worker-01-recurring_batch-6",
+  "provider": "AWS",
+  "project_key": "p2",
+  "project_id": "8eb0ed015214dcc577a7790c",
+  "resource_id": "i-33c31443a0c115b3a",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-09-14T02:00:00Z",
+  "window_end": "2026-09-14T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "CPUUtilization"
+  ],
+  "episode_index": 5
+ },
+ {
+  "incident_id": "GT-AWS-p2-db-01-disk_log_growth",
+  "provider": "AWS",
+  "project_key": "p2",
+  "project_id": "8eb0ed015214dcc577a7790c",
+  "resource_id": "i-8b73748d249dd3755",
+  "resource_name": "analytics-staging-db-01",
+  "tier": "db",
+  "use_case": "UC4",
+  "scenario": "disk_log_growth",
+  "note": "unrotated logs grow ~1.5 pts/day; still open (critical) at end of window",
+  "window_start": "2026-08-20T00:00:00Z",
+  "window_end": "2026-09-19T00:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "DISK_LOG_GROWTH",
+  "acceptable_root_causes": [
+   "DISK_LOG_GROWTH"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 4,
+  "alert_metrics": [
+   "disk_used_percent"
+  ]
+ },
+ {
+  "incident_id": "GT-Azure-p1-web-01-traffic_surge",
+  "provider": "Azure",
+  "project_key": "p1",
+  "project_id": "2905549d65151bebc9ae262f",
+  "resource_id": "/subscriptions/7f77381a-3086-8678-a95e-71b40b779460/resourceGroups/shop-prod-rg/providers/Microsoft.Compute/virtualMachines/shop-prod-web-01",
+  "resource_name": "shop-prod-web-01",
+  "tier": "web",
+  "use_case": "UC1",
+  "scenario": "traffic_surge",
+  "note": "fleet-wide organic traffic surge (ramp), web-tier",
+  "window_start": "2026-08-15T12:00:00Z",
+  "window_end": "2026-08-16T08:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_TRAFFIC_SURGE",
+  "acceptable_root_causes": [
+   "CPU_TRAFFIC_SURGE"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 3,
+  "alert_metrics": [
+   "Network In Total",
+   "Network Out Total",
+   "Percentage CPU"
+  ]
+ },
+ {
+  "incident_id": "GT-Azure-p1-web-01-net_ingress_anomaly",
+  "provider": "Azure",
+  "project_key": "p1",
+  "project_id": "2905549d65151bebc9ae262f",
+  "resource_id": "/subscriptions/7f77381a-3086-8678-a95e-71b40b779460/resourceGroups/shop-prod-rg/providers/Microsoft.Compute/virtualMachines/shop-prod-web-01",
+  "resource_name": "shop-prod-web-01",
+  "tier": "web",
+  "use_case": "UC5",
+  "scenario": "net_ingress_anomaly",
+  "note": "abrupt off-hours ingress step, attack/scan-like, CPU barely moves",
+  "window_start": "2026-09-02T02:00:00Z",
+  "window_end": "2026-09-02T15:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "NETWORK_INGRESS_ANOMALY",
+  "acceptable_root_causes": [
+   "NETWORK_INGRESS_ANOMALY"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "Network In Total"
+  ]
+ },
+ {
+  "incident_id": "GT-Azure-p1-web-01-anomaly_no_alert",
+  "provider": "Azure",
+  "project_key": "p1",
+  "project_id": "2905549d65151bebc9ae262f",
+  "resource_id": "/subscriptions/7f77381a-3086-8678-a95e-71b40b779460/resourceGroups/shop-prod-rg/providers/Microsoft.Compute/virtualMachines/shop-prod-web-01",
+  "resource_name": "shop-prod-web-01",
+  "tier": "web",
+  "use_case": "UC1",
+  "scenario": "anomaly_no_alert",
+  "note": "CPU blip to ~66% - anomalous vs baseline but BELOW every alert threshold",
+  "window_start": "2026-09-11T14:00:00Z",
+  "window_end": "2026-09-11T18:00:00Z",
+  "expects_alert": false,
+  "expects_recommendation": false,
+  "expected_root_cause": null,
+  "acceptable_root_causes": [],
+  "root_resource_ids": [],
+  "n_alert_episodes": 0,
+  "alert_metrics": []
+ },
+ {
+  "incident_id": "GT-Azure-p1-web-02-traffic_surge",
+  "provider": "Azure",
+  "project_key": "p1",
+  "project_id": "2905549d65151bebc9ae262f",
+  "resource_id": "/subscriptions/7f77381a-3086-8678-a95e-71b40b779460/resourceGroups/shop-prod-rg/providers/Microsoft.Compute/virtualMachines/shop-prod-web-02",
+  "resource_name": "shop-prod-web-02",
+  "tier": "web",
+  "use_case": "UC1",
+  "scenario": "traffic_surge",
+  "note": "same LB-driven surge on the peer web node",
+  "window_start": "2026-08-15T12:00:00Z",
+  "window_end": "2026-08-16T08:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_TRAFFIC_SURGE",
+  "acceptable_root_causes": [
+   "CPU_TRAFFIC_SURGE"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 1,
+  "alert_metrics": [
+   "Percentage CPU"
+  ]
+ },
+ {
+  "incident_id": "GT-Azure-p1-web-02-cpu_flapping",
+  "provider": "Azure",
+  "project_key": "p1",
+  "project_id": "2905549d65151bebc9ae262f",
+  "resource_id": "/subscriptions/7f77381a-3086-8678-a95e-71b40b779460/resourceGroups/shop-prod-rg/providers/Microsoft.Compute/virtualMachines/shop-prod-web-02",
+  "resource_name": "shop-prod-web-02",
+  "tier": "web",
+  "use_case": "UC1",
+  "scenario": "cpu_flapping",
+  "note": "CPU oscillating around the 75% warning line -> alert fires/resolves repeatedly",
+  "window_start": "2026-08-28T09:00:00Z",
+  "window_end": "2026-08-28T23:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "ALERT_FLAPPING",
+  "acceptable_root_causes": [
+   "ALERT_FLAPPING"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 3,
+  "alert_metrics": [
+   "Percentage CPU"
+  ]
+ },
+ {
+  "incident_id": "GT-Azure-p1-app-01-downstream_surge",
+  "provider": "Azure",
+  "project_key": "p1",
+  "project_id": "2905549d65151bebc9ae262f",
+  "resource_id": "/subscriptions/7f77381a-3086-8678-a95e-71b40b779460/resourceGroups/shop-prod-rg/providers/Microsoft.Compute/virtualMachines/shop-prod-app-01",
+  "resource_name": "shop-prod-app-01",
+  "tier": "app",
+  "use_case": "UC1",
+  "scenario": "downstream_surge",
+  "note": "CPU alert on app tier that is purely a consequence of the web-tier surge",
+  "window_start": "2026-08-15T13:00:00Z",
+  "window_end": "2026-08-16T09:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "UPSTREAM_PROPAGATION",
+  "acceptable_root_causes": [
+   "UPSTREAM_PROPAGATION"
+  ],
+  "root_resource_ids": [
+   "/subscriptions/7f77381a-3086-8678-a95e-71b40b779460/resourceGroups/shop-prod-rg/providers/Microsoft.Compute/virtualMachines/shop-prod-web-01",
+   "/subscriptions/7f77381a-3086-8678-a95e-71b40b779460/resourceGroups/shop-prod-rg/providers/Microsoft.Compute/virtualMachines/shop-prod-web-02"
+  ],
+  "n_alert_episodes": 5,
+  "alert_metrics": [
+   "Network In Total",
+   "Network Out Total",
+   "Percentage CPU"
+  ]
+ },
+ {
+  "incident_id": "GT-Azure-p1-app-01-memory_leak",
+  "provider": "Azure",
+  "project_key": "p1",
+  "project_id": "2905549d65151bebc9ae262f",
+  "resource_id": "/subscriptions/7f77381a-3086-8678-a95e-71b40b779460/resourceGroups/shop-prod-rg/providers/Microsoft.Compute/virtualMachines/shop-prod-app-01",
+  "resource_name": "shop-prod-app-01",
+  "tier": "app",
+  "use_case": "UC2",
+  "scenario": "memory_leak",
+  "note": "linear memory growth for ~22 days, ends with a restart",
+  "window_start": "2026-08-24T00:00:00Z",
+  "window_end": "2026-09-14T18:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "MEMORY_LEAK",
+  "acceptable_root_causes": [
+   "MEMORY_LEAK"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 9,
+  "alert_metrics": [
+   "Available Memory Bytes"
+  ]
+ },
+ {
+  "incident_id": "GT-Azure-p1-worker-01-credit_exhaustion",
+  "provider": "Azure",
+  "project_key": "p1",
+  "project_id": "2905549d65151bebc9ae262f",
+  "resource_id": "/subscriptions/7f77381a-3086-8678-a95e-71b40b779460/resourceGroups/shop-prod-rg/providers/Microsoft.Compute/virtualMachines/shop-prod-worker-01",
+  "resource_name": "shop-prod-worker-01",
+  "tier": "worker",
+  "use_case": "UC3",
+  "scenario": "credit_exhaustion",
+  "note": "sustained demand above burst baseline for days -> credits hit zero -> throttled",
+  "window_start": "2026-08-18T00:00:00Z",
+  "window_end": "2026-08-28T12:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CREDIT_EXHAUSTION",
+  "acceptable_root_causes": [
+   "CREDIT_EXHAUSTION"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 8,
+  "alert_metrics": [
+   "CPU Credits Remaining"
+  ]
+ },
+ {
+  "incident_id": "GT-Azure-p1-worker-01-transient_spike",
+  "provider": "Azure",
+  "project_key": "p1",
+  "project_id": "2905549d65151bebc9ae262f",
+  "resource_id": "/subscriptions/7f77381a-3086-8678-a95e-71b40b779460/resourceGroups/shop-prod-rg/providers/Microsoft.Compute/virtualMachines/shop-prod-worker-01",
+  "resource_name": "shop-prod-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "transient_spike",
+  "note": "2-hour CPU spike that self-resolves; nothing else deviates",
+  "window_start": "2026-09-08T11:00:00Z",
+  "window_end": "2026-09-08T17:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "TRANSIENT_SPIKE",
+  "acceptable_root_causes": [
+   "TRANSIENT_SPIKE"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "Percentage CPU"
+  ]
+ },
+ {
+  "incident_id": "GT-Azure-p1-db-01-disk_sudden_fill",
+  "provider": "Azure",
+  "project_key": "p1",
+  "project_id": "2905549d65151bebc9ae262f",
+  "resource_id": "/subscriptions/7f77381a-3086-8678-a95e-71b40b779460/resourceGroups/shop-prod-rg/providers/Microsoft.Compute/virtualMachines/shop-prod-db-01",
+  "resource_name": "shop-prod-db-01",
+  "tier": "db",
+  "use_case": "UC4",
+  "scenario": "disk_sudden_fill",
+  "note": "core-dump / runaway export fills the volume within 3 hours",
+  "window_start": "2026-08-29T10:00:00Z",
+  "window_end": "2026-08-31T23:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "DISK_SUDDEN_FILL",
+  "acceptable_root_causes": [
+   "DISK_SUDDEN_FILL"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 1,
+  "alert_metrics": [
+   "disk/free_percent"
+  ]
+ },
+ {
+  "incident_id": "GT-Azure-p2-web-01-net_egress_anomaly",
+  "provider": "Azure",
+  "project_key": "p2",
+  "project_id": "2d92ac2a18309d082049e39e",
+  "resource_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-web-01",
+  "resource_name": "analytics-staging-web-01",
+  "tier": "web",
+  "use_case": "UC5",
+  "scenario": "net_egress_anomaly",
+  "note": "12h egress spike while ingress and CPU stay normal (bulk copy / exfil-like)",
+  "window_start": "2026-08-26T20:00:00Z",
+  "window_end": "2026-08-27T18:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "NETWORK_EGRESS_ANOMALY",
+  "acceptable_root_causes": [
+   "NETWORK_EGRESS_ANOMALY"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "Network Out Total"
+  ]
+ },
+ {
+  "incident_id": "GT-Azure-p2-web-02-net_traffic_loss",
+  "provider": "Azure",
+  "project_key": "p2",
+  "project_id": "2d92ac2a18309d082049e39e",
+  "resource_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-web-02",
+  "resource_name": "analytics-staging-web-02",
+  "tier": "web",
+  "use_case": "UC5",
+  "scenario": "net_traffic_loss",
+  "note": "VM stays up but traffic vanishes (LB / DNS / NSG change upstream)",
+  "window_start": "2026-09-06T09:00:00Z",
+  "window_end": "2026-09-07T01:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "NETWORK_TRAFFIC_LOSS",
+  "acceptable_root_causes": [
+   "NETWORK_TRAFFIC_LOSS"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "Network In Total",
+   "Network Out Total"
+  ]
+ },
+ {
+  "incident_id": "GT-Azure-p2-app-01-memory_step",
+  "provider": "Azure",
+  "project_key": "p2",
+  "project_id": "2d92ac2a18309d082049e39e",
+  "resource_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-app-01",
+  "resource_name": "analytics-staging-app-01",
+  "tier": "app",
+  "use_case": "UC2",
+  "scenario": "memory_step",
+  "note": "release raises steady-state memory by ~23 points; rolled back later",
+  "window_start": "2026-08-23T10:00:00Z",
+  "window_end": "2026-09-09T17:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "MEMORY_STEP_CHANGE",
+  "acceptable_root_causes": [
+   "MEMORY_STEP_CHANGE"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 1,
+  "alert_metrics": [
+   "Available Memory Bytes"
+  ]
+ },
+ {
+  "incident_id": "GT-Azure-p2-app-01-data_gap",
+  "provider": "Azure",
+  "project_key": "p2",
+  "project_id": "2d92ac2a18309d082049e39e",
+  "resource_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-app-01",
+  "resource_name": "analytics-staging-app-01",
+  "tier": "app",
+  "use_case": "UC1",
+  "scenario": "data_gap",
+  "note": "monitoring gap (6 missing hourly points) - data-quality case, no alert",
+  "window_start": "2026-09-01T04:00:00Z",
+  "window_end": "2026-09-01T12:00:00Z",
+  "expects_alert": false,
+  "expects_recommendation": false,
+  "expected_root_cause": null,
+  "acceptable_root_causes": [],
+  "root_resource_ids": [],
+  "n_alert_episodes": 0,
+  "alert_metrics": []
+ },
+ {
+  "incident_id": "GT-Azure-p2-app-01-cpu_runaway",
+  "provider": "Azure",
+  "project_key": "p2",
+  "project_id": "2d92ac2a18309d082049e39e",
+  "resource_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-app-01",
+  "resource_name": "analytics-staging-app-01",
+  "tier": "app",
+  "use_case": "UC1",
+  "scenario": "cpu_runaway",
+  "note": "flat ~97% CPU with normal traffic and memory",
+  "window_start": "2026-09-14T06:00:00Z",
+  "window_end": "2026-09-14T19:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RUNAWAY_PROCESS",
+  "acceptable_root_causes": [
+   "CPU_RUNAWAY_PROCESS"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "Percentage CPU"
+  ]
+ },
+ {
+  "incident_id": "GT-Azure-p2-worker-01-recurring_batch-1",
+  "provider": "Azure",
+  "project_key": "p2",
+  "project_id": "2d92ac2a18309d082049e39e",
+  "resource_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-worker-01",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-08-10T02:00:00Z",
+  "window_end": "2026-08-10T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RUNAWAY_PROCESS",
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "Percentage CPU"
+  ],
+  "episode_index": 0
+ },
+ {
+  "incident_id": "GT-Azure-p2-worker-01-recurring_batch-2",
+  "provider": "Azure",
+  "project_key": "p2",
+  "project_id": "2d92ac2a18309d082049e39e",
+  "resource_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-worker-01",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-08-17T02:00:00Z",
+  "window_end": "2026-08-17T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RUNAWAY_PROCESS",
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "Percentage CPU"
+  ],
+  "episode_index": 1
+ },
+ {
+  "incident_id": "GT-Azure-p2-worker-01-recurring_batch-3",
+  "provider": "Azure",
+  "project_key": "p2",
+  "project_id": "2d92ac2a18309d082049e39e",
+  "resource_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-worker-01",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-08-24T02:00:00Z",
+  "window_end": "2026-08-24T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "Percentage CPU"
+  ],
+  "episode_index": 2
+ },
+ {
+  "incident_id": "GT-Azure-p2-worker-01-recurring_batch-4",
+  "provider": "Azure",
+  "project_key": "p2",
+  "project_id": "2d92ac2a18309d082049e39e",
+  "resource_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-worker-01",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-08-31T02:00:00Z",
+  "window_end": "2026-08-31T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "Percentage CPU"
+  ],
+  "episode_index": 3
+ },
+ {
+  "incident_id": "GT-Azure-p2-worker-01-recurring_batch-5",
+  "provider": "Azure",
+  "project_key": "p2",
+  "project_id": "2d92ac2a18309d082049e39e",
+  "resource_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-worker-01",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-09-07T02:00:00Z",
+  "window_end": "2026-09-07T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "Percentage CPU"
+  ],
+  "episode_index": 4
+ },
+ {
+  "incident_id": "GT-Azure-p2-worker-01-recurring_batch-6",
+  "provider": "Azure",
+  "project_key": "p2",
+  "project_id": "2d92ac2a18309d082049e39e",
+  "resource_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-worker-01",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-09-14T02:00:00Z",
+  "window_end": "2026-09-14T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "Percentage CPU"
+  ],
+  "episode_index": 5
+ },
+ {
+  "incident_id": "GT-Azure-p2-db-01-disk_log_growth",
+  "provider": "Azure",
+  "project_key": "p2",
+  "project_id": "2d92ac2a18309d082049e39e",
+  "resource_id": "/subscriptions/50c6393e-ec29-b86b-9d8c-121e413dc159/resourceGroups/analytics-staging-rg/providers/Microsoft.Compute/virtualMachines/analytics-staging-db-01",
+  "resource_name": "analytics-staging-db-01",
+  "tier": "db",
+  "use_case": "UC4",
+  "scenario": "disk_log_growth",
+  "note": "unrotated logs grow ~1.5 pts/day; still open (critical) at end of window",
+  "window_start": "2026-08-22T00:00:00Z",
+  "window_end": "2026-09-19T00:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "DISK_LOG_GROWTH",
+  "acceptable_root_causes": [
+   "DISK_LOG_GROWTH"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "disk/free_percent"
+  ]
+ },
+ {
+  "incident_id": "GT-GCP-p1-web-01-traffic_surge",
+  "provider": "GCP",
+  "project_key": "p1",
+  "project_id": "8e2daaa4320861183e8fd276",
+  "resource_id": "projects/shop-prod-02df1/zones/us-central1-a/instances/shop-prod-web-01",
+  "resource_name": "shop-prod-web-01",
+  "tier": "web",
+  "use_case": "UC1",
+  "scenario": "traffic_surge",
+  "note": "fleet-wide organic traffic surge (ramp), web-tier",
+  "window_start": "2026-08-12T12:00:00Z",
+  "window_end": "2026-08-13T08:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_TRAFFIC_SURGE",
+  "acceptable_root_causes": [
+   "CPU_TRAFFIC_SURGE"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 4,
+  "alert_metrics": [
+   "compute.googleapis.com/instance/cpu/utilization",
+   "compute.googleapis.com/instance/network/received_bytes_count",
+   "compute.googleapis.com/instance/network/sent_bytes_count"
+  ]
+ },
+ {
+  "incident_id": "GT-GCP-p1-web-01-net_ingress_anomaly",
+  "provider": "GCP",
+  "project_key": "p1",
+  "project_id": "8e2daaa4320861183e8fd276",
+  "resource_id": "projects/shop-prod-02df1/zones/us-central1-a/instances/shop-prod-web-01",
+  "resource_name": "shop-prod-web-01",
+  "tier": "web",
+  "use_case": "UC5",
+  "scenario": "net_ingress_anomaly",
+  "note": "abrupt off-hours ingress step, attack/scan-like, CPU barely moves",
+  "window_start": "2026-08-30T02:00:00Z",
+  "window_end": "2026-08-30T15:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "NETWORK_INGRESS_ANOMALY",
+  "acceptable_root_causes": [
+   "NETWORK_INGRESS_ANOMALY"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "compute.googleapis.com/instance/network/received_bytes_count"
+  ]
+ },
+ {
+  "incident_id": "GT-GCP-p1-web-01-anomaly_no_alert",
+  "provider": "GCP",
+  "project_key": "p1",
+  "project_id": "8e2daaa4320861183e8fd276",
+  "resource_id": "projects/shop-prod-02df1/zones/us-central1-a/instances/shop-prod-web-01",
+  "resource_name": "shop-prod-web-01",
+  "tier": "web",
+  "use_case": "UC1",
+  "scenario": "anomaly_no_alert",
+  "note": "CPU blip to ~66% - anomalous vs baseline but BELOW every alert threshold",
+  "window_start": "2026-09-08T14:00:00Z",
+  "window_end": "2026-09-08T18:00:00Z",
+  "expects_alert": false,
+  "expects_recommendation": false,
+  "expected_root_cause": null,
+  "acceptable_root_causes": [],
+  "root_resource_ids": [],
+  "n_alert_episodes": 0,
+  "alert_metrics": []
+ },
+ {
+  "incident_id": "GT-GCP-p1-web-02-traffic_surge",
+  "provider": "GCP",
+  "project_key": "p1",
+  "project_id": "8e2daaa4320861183e8fd276",
+  "resource_id": "projects/shop-prod-02df1/zones/us-central1-a/instances/shop-prod-web-02",
+  "resource_name": "shop-prod-web-02",
+  "tier": "web",
+  "use_case": "UC1",
+  "scenario": "traffic_surge",
+  "note": "same LB-driven surge on the peer web node",
+  "window_start": "2026-08-12T12:00:00Z",
+  "window_end": "2026-08-13T08:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_TRAFFIC_SURGE",
+  "acceptable_root_causes": [
+   "CPU_TRAFFIC_SURGE"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 4,
+  "alert_metrics": [
+   "compute.googleapis.com/instance/cpu/utilization",
+   "compute.googleapis.com/instance/network/received_bytes_count",
+   "compute.googleapis.com/instance/network/sent_bytes_count"
+  ]
+ },
+ {
+  "incident_id": "GT-GCP-p1-web-02-cpu_flapping",
+  "provider": "GCP",
+  "project_key": "p1",
+  "project_id": "8e2daaa4320861183e8fd276",
+  "resource_id": "projects/shop-prod-02df1/zones/us-central1-a/instances/shop-prod-web-02",
+  "resource_name": "shop-prod-web-02",
+  "tier": "web",
+  "use_case": "UC1",
+  "scenario": "cpu_flapping",
+  "note": "CPU oscillating around the 75% warning line -> alert fires/resolves repeatedly",
+  "window_start": "2026-08-25T09:00:00Z",
+  "window_end": "2026-08-25T23:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "ALERT_FLAPPING",
+  "acceptable_root_causes": [
+   "ALERT_FLAPPING"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 3,
+  "alert_metrics": [
+   "compute.googleapis.com/instance/cpu/utilization"
+  ]
+ },
+ {
+  "incident_id": "GT-GCP-p1-app-01-downstream_surge",
+  "provider": "GCP",
+  "project_key": "p1",
+  "project_id": "8e2daaa4320861183e8fd276",
+  "resource_id": "projects/shop-prod-02df1/zones/us-central1-a/instances/shop-prod-app-01",
+  "resource_name": "shop-prod-app-01",
+  "tier": "app",
+  "use_case": "UC1",
+  "scenario": "downstream_surge",
+  "note": "CPU alert on app tier that is purely a consequence of the web-tier surge",
+  "window_start": "2026-08-12T13:00:00Z",
+  "window_end": "2026-08-13T09:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "UPSTREAM_PROPAGATION",
+  "acceptable_root_causes": [
+   "UPSTREAM_PROPAGATION"
+  ],
+  "root_resource_ids": [
+   "projects/shop-prod-02df1/zones/us-central1-a/instances/shop-prod-web-01",
+   "projects/shop-prod-02df1/zones/us-central1-a/instances/shop-prod-web-02"
+  ],
+  "n_alert_episodes": 5,
+  "alert_metrics": [
+   "compute.googleapis.com/instance/cpu/utilization",
+   "compute.googleapis.com/instance/network/received_bytes_count",
+   "compute.googleapis.com/instance/network/sent_bytes_count"
+  ]
+ },
+ {
+  "incident_id": "GT-GCP-p1-app-01-memory_leak",
+  "provider": "GCP",
+  "project_key": "p1",
+  "project_id": "8e2daaa4320861183e8fd276",
+  "resource_id": "projects/shop-prod-02df1/zones/us-central1-a/instances/shop-prod-app-01",
+  "resource_name": "shop-prod-app-01",
+  "tier": "app",
+  "use_case": "UC2",
+  "scenario": "memory_leak",
+  "note": "linear memory growth for ~22 days, ends with a restart",
+  "window_start": "2026-08-21T00:00:00Z",
+  "window_end": "2026-09-11T18:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "MEMORY_LEAK",
+  "acceptable_root_causes": [
+   "MEMORY_LEAK"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 9,
+  "alert_metrics": [
+   "agent.googleapis.com/memory/percent_used"
+  ]
+ },
+ {
+  "incident_id": "GT-GCP-p1-worker-01-credit_exhaustion",
+  "provider": "GCP",
+  "project_key": "p1",
+  "project_id": "8e2daaa4320861183e8fd276",
+  "resource_id": "projects/shop-prod-02df1/zones/us-central1-a/instances/shop-prod-worker-01",
+  "resource_name": "shop-prod-worker-01",
+  "tier": "worker",
+  "use_case": "UC3",
+  "scenario": "credit_exhaustion",
+  "note": "sustained demand above burst baseline for days -> credits hit zero -> throttled",
+  "window_start": "2026-08-15T00:00:00Z",
+  "window_end": "2026-08-25T12:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CREDIT_EXHAUSTION",
+  "acceptable_root_causes": [
+   "CREDIT_EXHAUSTION"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 15,
+  "alert_metrics": [
+   "compute.googleapis.com/instance/cpu/scheduler_wait_time"
+  ]
+ },
+ {
+  "incident_id": "GT-GCP-p1-worker-01-transient_spike",
+  "provider": "GCP",
+  "project_key": "p1",
+  "project_id": "8e2daaa4320861183e8fd276",
+  "resource_id": "projects/shop-prod-02df1/zones/us-central1-a/instances/shop-prod-worker-01",
+  "resource_name": "shop-prod-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "transient_spike",
+  "note": "2-hour CPU spike that self-resolves; nothing else deviates",
+  "window_start": "2026-09-05T11:00:00Z",
+  "window_end": "2026-09-05T17:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "TRANSIENT_SPIKE",
+  "acceptable_root_causes": [
+   "TRANSIENT_SPIKE"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "compute.googleapis.com/instance/cpu/utilization"
+  ]
+ },
+ {
+  "incident_id": "GT-GCP-p1-db-01-disk_sudden_fill",
+  "provider": "GCP",
+  "project_key": "p1",
+  "project_id": "8e2daaa4320861183e8fd276",
+  "resource_id": "projects/shop-prod-02df1/zones/us-central1-a/instances/shop-prod-db-01",
+  "resource_name": "shop-prod-db-01",
+  "tier": "db",
+  "use_case": "UC4",
+  "scenario": "disk_sudden_fill",
+  "note": "core-dump / runaway export fills the volume within 3 hours",
+  "window_start": "2026-08-26T10:00:00Z",
+  "window_end": "2026-08-28T23:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "DISK_SUDDEN_FILL",
+  "acceptable_root_causes": [
+   "DISK_SUDDEN_FILL"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 1,
+  "alert_metrics": [
+   "agent.googleapis.com/disk/percent_used"
+  ]
+ },
+ {
+  "incident_id": "GT-GCP-p2-web-01-net_egress_anomaly",
+  "provider": "GCP",
+  "project_key": "p2",
+  "project_id": "87617a9151eaff411b02e5f9",
+  "resource_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-web-01",
+  "resource_name": "analytics-staging-web-01",
+  "tier": "web",
+  "use_case": "UC5",
+  "scenario": "net_egress_anomaly",
+  "note": "12h egress spike while ingress and CPU stay normal (bulk copy / exfil-like)",
+  "window_start": "2026-08-23T20:00:00Z",
+  "window_end": "2026-08-24T18:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "NETWORK_EGRESS_ANOMALY",
+  "acceptable_root_causes": [
+   "NETWORK_EGRESS_ANOMALY"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "compute.googleapis.com/instance/network/sent_bytes_count"
+  ]
+ },
+ {
+  "incident_id": "GT-GCP-p2-web-02-net_traffic_loss",
+  "provider": "GCP",
+  "project_key": "p2",
+  "project_id": "87617a9151eaff411b02e5f9",
+  "resource_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-web-02",
+  "resource_name": "analytics-staging-web-02",
+  "tier": "web",
+  "use_case": "UC5",
+  "scenario": "net_traffic_loss",
+  "note": "VM stays up but traffic vanishes (LB / DNS / NSG change upstream)",
+  "window_start": "2026-09-03T09:00:00Z",
+  "window_end": "2026-09-04T01:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "NETWORK_TRAFFIC_LOSS",
+  "acceptable_root_causes": [
+   "NETWORK_TRAFFIC_LOSS"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "compute.googleapis.com/instance/network/received_bytes_count",
+   "compute.googleapis.com/instance/network/sent_bytes_count"
+  ]
+ },
+ {
+  "incident_id": "GT-GCP-p2-app-01-memory_step",
+  "provider": "GCP",
+  "project_key": "p2",
+  "project_id": "87617a9151eaff411b02e5f9",
+  "resource_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-app-01",
+  "resource_name": "analytics-staging-app-01",
+  "tier": "app",
+  "use_case": "UC2",
+  "scenario": "memory_step",
+  "note": "release raises steady-state memory by ~23 points; rolled back later",
+  "window_start": "2026-08-20T10:00:00Z",
+  "window_end": "2026-09-06T17:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "MEMORY_STEP_CHANGE",
+  "acceptable_root_causes": [
+   "MEMORY_STEP_CHANGE"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 1,
+  "alert_metrics": [
+   "agent.googleapis.com/memory/percent_used"
+  ]
+ },
+ {
+  "incident_id": "GT-GCP-p2-app-01-data_gap",
+  "provider": "GCP",
+  "project_key": "p2",
+  "project_id": "87617a9151eaff411b02e5f9",
+  "resource_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-app-01",
+  "resource_name": "analytics-staging-app-01",
+  "tier": "app",
+  "use_case": "UC1",
+  "scenario": "data_gap",
+  "note": "monitoring gap (6 missing hourly points) - data-quality case, no alert",
+  "window_start": "2026-08-29T04:00:00Z",
+  "window_end": "2026-08-29T12:00:00Z",
+  "expects_alert": false,
+  "expects_recommendation": false,
+  "expected_root_cause": null,
+  "acceptable_root_causes": [],
+  "root_resource_ids": [],
+  "n_alert_episodes": 0,
+  "alert_metrics": []
+ },
+ {
+  "incident_id": "GT-GCP-p2-app-01-cpu_runaway",
+  "provider": "GCP",
+  "project_key": "p2",
+  "project_id": "87617a9151eaff411b02e5f9",
+  "resource_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-app-01",
+  "resource_name": "analytics-staging-app-01",
+  "tier": "app",
+  "use_case": "UC1",
+  "scenario": "cpu_runaway",
+  "note": "flat ~97% CPU with normal traffic and memory",
+  "window_start": "2026-09-11T06:00:00Z",
+  "window_end": "2026-09-11T19:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RUNAWAY_PROCESS",
+  "acceptable_root_causes": [
+   "CPU_RUNAWAY_PROCESS"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "compute.googleapis.com/instance/cpu/utilization"
+  ]
+ },
+ {
+  "incident_id": "GT-GCP-p2-worker-01-recurring_batch-1",
+  "provider": "GCP",
+  "project_key": "p2",
+  "project_id": "87617a9151eaff411b02e5f9",
+  "resource_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-worker-01",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-08-10T02:00:00Z",
+  "window_end": "2026-08-10T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RUNAWAY_PROCESS",
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "compute.googleapis.com/instance/cpu/utilization"
+  ],
+  "episode_index": 0
+ },
+ {
+  "incident_id": "GT-GCP-p2-worker-01-recurring_batch-2",
+  "provider": "GCP",
+  "project_key": "p2",
+  "project_id": "87617a9151eaff411b02e5f9",
+  "resource_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-worker-01",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-08-17T02:00:00Z",
+  "window_end": "2026-08-17T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RUNAWAY_PROCESS",
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "compute.googleapis.com/instance/cpu/utilization"
+  ],
+  "episode_index": 1
+ },
+ {
+  "incident_id": "GT-GCP-p2-worker-01-recurring_batch-3",
+  "provider": "GCP",
+  "project_key": "p2",
+  "project_id": "87617a9151eaff411b02e5f9",
+  "resource_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-worker-01",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-08-24T02:00:00Z",
+  "window_end": "2026-08-24T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "compute.googleapis.com/instance/cpu/utilization"
+  ],
+  "episode_index": 2
+ },
+ {
+  "incident_id": "GT-GCP-p2-worker-01-recurring_batch-4",
+  "provider": "GCP",
+  "project_key": "p2",
+  "project_id": "87617a9151eaff411b02e5f9",
+  "resource_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-worker-01",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-08-31T02:00:00Z",
+  "window_end": "2026-08-31T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "compute.googleapis.com/instance/cpu/utilization"
+  ],
+  "episode_index": 3
+ },
+ {
+  "incident_id": "GT-GCP-p2-worker-01-recurring_batch-5",
+  "provider": "GCP",
+  "project_key": "p2",
+  "project_id": "87617a9151eaff411b02e5f9",
+  "resource_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-worker-01",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-09-07T02:00:00Z",
+  "window_end": "2026-09-07T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "compute.googleapis.com/instance/cpu/utilization"
+  ],
+  "episode_index": 4
+ },
+ {
+  "incident_id": "GT-GCP-p2-worker-01-recurring_batch-6",
+  "provider": "GCP",
+  "project_key": "p2",
+  "project_id": "87617a9151eaff411b02e5f9",
+  "resource_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-worker-01",
+  "resource_name": "analytics-staging-worker-01",
+  "tier": "worker",
+  "use_case": "UC1",
+  "scenario": "recurring_batch",
+  "note": "weekly Monday 02:00-05:00 batch job saturates CPU (alert every week)",
+  "window_start": "2026-09-14T02:00:00Z",
+  "window_end": "2026-09-14T11:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "CPU_RECURRING_LOAD",
+  "acceptable_root_causes": [
+   "CPU_RECURRING_LOAD"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 2,
+  "alert_metrics": [
+   "compute.googleapis.com/instance/cpu/utilization"
+  ],
+  "episode_index": 5
+ },
+ {
+  "incident_id": "GT-GCP-p2-db-01-disk_log_growth",
+  "provider": "GCP",
+  "project_key": "p2",
+  "project_id": "87617a9151eaff411b02e5f9",
+  "resource_id": "projects/analytics-staging-e0826/zones/us-central1-a/instances/analytics-staging-db-01",
+  "resource_name": "analytics-staging-db-01",
+  "tier": "db",
+  "use_case": "UC4",
+  "scenario": "disk_log_growth",
+  "note": "unrotated logs grow ~1.5 pts/day; still open (critical) at end of window",
+  "window_start": "2026-08-19T00:00:00Z",
+  "window_end": "2026-09-19T00:00:00Z",
+  "expects_alert": true,
+  "expects_recommendation": true,
+  "expected_root_cause": "DISK_LOG_GROWTH",
+  "acceptable_root_causes": [
+   "DISK_LOG_GROWTH"
+  ],
+  "root_resource_ids": [],
+  "n_alert_episodes": 3,
+  "alert_metrics": [
+   "agent.googleapis.com/disk/percent_used"
+  ]
+ }
+]
